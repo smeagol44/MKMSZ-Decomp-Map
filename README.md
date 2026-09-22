@@ -4,7 +4,7 @@ Interactive decompilation-readiness heatmap for **Mortal Kombat Mythologies: Sub
 
 Public site:
 
-**https://smeagol44.github.io/KMSZ-Decomp-Map/**
+**https://smeagol44.github.io/MKMSZ-Decomp-Map/**
 
 ## What the colors mean
 
@@ -20,22 +20,16 @@ The 600 squares are equal-sized **knowledge units**, not equal code-size buckets
 
 ## Updating the map
 
-The current ratings live in `data.js`.
+The current ratings are embedded in `index.html`.
 
-Each row has:
-
-```js
-{name: "Subsystem", g: 8, y: 10, b: 22, n: [ ...named units... ]}
-```
-
-The totals must satisfy `g + y + b = 40` for every row. Named units are inserted explicitly; remaining cells are filled with generic row-level knowledge slices and deterministically shuffled so the layout remains stable between page loads.
+Each row stores its green/yellow/black counts plus concrete named units. The totals must satisfy 40 cells per row. Named units are inserted explicitly; remaining cells are filled with generic row-level knowledge slices and deterministically shuffled so the layout remains stable between page loads.
 
 When the research changes:
 
 1. Review current `wiki/Project-Status.md` and the relevant owning MKMSZR Wiki pages.
 2. Promote/demote cells only when the evidence warrants it.
 3. Update named units when a concrete function/structure becomes understood.
-4. Update `lastUpdated` in `data.js`.
+4. Update the visible snapshot date.
 5. Keep the distinction between runtime-confirmed, static-confirmed, implementation-confirmed, hypothesis, failed/rejected and pending findings.
 
 ## Deployment
