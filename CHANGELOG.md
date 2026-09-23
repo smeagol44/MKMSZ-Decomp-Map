@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-23 — Project atlas expansion
+
+- Added the public-facing **Feature Board** for production, beta, proof, 1.0-needed, open, and post-1.0 research states.
+- Added the eight-stage **Stage Atlas** sourced from normalized stage catalogs.
+- Added the **MKT → MKMSZ Compatibility Matrix** covering host primitives, assets, animation, combat semantics, combos, and integration gaps.
+- Added production/proof **Patch-site overlays** to the ROM map and to RDRAM where an established RAM/VA context exists.
+- Refreshed the literal memory snapshot to current MKMSZR production, including the promoted rainbow outfit allocation/layout.
+- Preserved the existing interval-to-grid selection behavior.
+- Expanded CI validation to all derivative research-map datasets.
+
 ## 2026-09-23 — Current research refresh and interval selection
 
 - Refreshed the memory snapshot from MKMSZR commit `3e1d0cae4a3a52989e8ef9b9c1290e1e01c81dfd`.

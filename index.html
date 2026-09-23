@@ -8,11 +8,22 @@
 
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}.tab{appearance:none;border:1px solid #36404a;background:#0e1216;color:#b9c4cf;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.tab.active{background:#f3f5f7;color:#080a0c;border-color:#fff}.view{display:none}.view.active{display:block}
 .mem-intro code,.mem-detail code,.mem-list code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.mem-note{padding:10px 12px;border-left:3px solid #64748b;background:#0d1116;color:#abb6c1;font-size:12px;line-height:1.5;margin-top:12px}.mem-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.mem-stat{border:1px solid var(--b);background:var(--p);border-radius:12px;padding:13px 15px}.mem-stat span,.mem-stat small{display:block;color:var(--m);font-size:11px}.mem-stat strong{font-size:22px}.mem-toolbar{display:grid;grid-template-columns:230px minmax(240px,1fr) auto;gap:10px;margin:14px 0}.mem-toolbar label{font-size:11px;color:var(--m);display:grid;gap:5px}.mem-toolbar input,.mem-toolbar select,.mem-toolbar button{height:42px;background:#0e1216;color:var(--t);border:1px solid #343e48;border-radius:9px;padding:0 12px}.mem-toolbar button{cursor:pointer}.mem-legend{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.mem-key{display:flex;align-items:center;gap:6px;border:1px solid #303944;border-radius:999px;padding:5px 8px;font-size:10px;color:#bdc7d1}.mem-key i{display:block;width:10px;height:10px;border-radius:3px}.mem-scroll{overflow:auto;padding:5px 1px 10px}.mem-grid{display:grid;grid-template-columns:repeat(16,42px);grid-auto-rows:42px;gap:4px;width:max-content}.mem-cell{position:relative;border:1px solid #252d35;background:#050708;border-radius:6px;padding:0;cursor:pointer;overflow:hidden}.mem-cell:hover,.mem-cell.sel{border-color:#fff}.mem-cell.sel{box-shadow:0 0 0 2px rgba(255,255,255,.86) inset}.mem-cell.dim{opacity:.18}.mem-cell .mem-mini{position:absolute;left:4px;top:4px;color:#65717c;font:8px ui-monospace,SFMono-Regular,Consolas,monospace;pointer-events:none}.mem-seg{position:absolute;height:7px;min-width:2px;border-radius:2px;bottom:4px;opacity:.96;box-shadow:0 0 0 1px rgba(255,255,255,.14) inset}.mem-detail{border:1px solid var(--b);background:rgba(17,21,26,.94);border-radius:15px;padding:18px;margin-top:12px;min-height:150px}.mem-detail h2{margin:7px 0}.mem-detail .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;margin:12px 0}.mem-detail .meta div{border-top:1px solid #28313a;padding-top:7px}.mem-detail .meta b{display:block;color:#7f8b98;font-size:9px;text-transform:uppercase;letter-spacing:.08em}.mem-detail .meta span{font-size:12px;line-height:1.45}.mem-list{margin-top:14px}.mem-list-head{display:flex;justify-content:space-between;gap:12px;align-items:end}.mem-records{display:grid;gap:7px;margin-top:10px}.mem-record{width:100%;text-align:left;background:#0d1116;border:1px solid #2c353f;color:#dce3ea;border-radius:9px;padding:10px 12px;cursor:pointer}.mem-record:hover{border-color:#778392}.mem-record.active{border-color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.6) inset}.mem-record strong{display:block;font-size:12px}.mem-record span{display:block;color:#8f9ba7;font:10px ui-monospace,SFMono-Regular,Consolas,monospace;margin-top:4px}.mem-badge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:900;color:#061014}.mem-empty{color:#8d99a5;font-size:12px;line-height:1.55}.mem-source{color:#9ca8b4;font-size:11px;margin-top:12px}.mem-source a{color:#cbd5e1}.c-production{background:#22d3ee}.c-stock-known{background:#a78bfa}.c-stock-unknown{background:#64748b}.c-confirmed-free{background:#4ade80}.c-candidate-free{background:#facc15}.c-dynamic{background:#fb923c}.c-proof-only{background:#f472b6}.c-rejected-conflict{background:#f87171}.c-alias-view{background:#60a5fa}.c-unknown{background:#111827}
-@media(max-width:820px){.mem-stats{grid-template-columns:1fr 1fr}.mem-toolbar{grid-template-columns:1fr}.mem-detail .meta{grid-template-columns:1fr}}
-@media(max-width:430px){.mem-stats{grid-template-columns:1fr}}
+
+/* Feature board */
+.board-stats,.compat-stats,.stage-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.board-stat,.compat-stat,.stage-stat{border:1px solid var(--b);background:var(--p);border-radius:12px;padding:13px 15px}.board-stat span,.compat-stat span,.stage-stat span{display:block;color:var(--m);font-size:11px}.board-stat strong,.compat-stat strong,.stage-stat strong{font-size:23px}
+.board-toolbar,.compat-toolbar{display:grid;grid-template-columns:180px 180px minmax(230px,1fr) auto;gap:10px;margin:14px 0}.board-toolbar label,.compat-toolbar label{font-size:11px;color:var(--m);display:grid;gap:5px}.board-toolbar input,.board-toolbar select,.board-toolbar button,.compat-toolbar input,.compat-toolbar select,.compat-toolbar button{height:42px;background:#0e1216;color:var(--t);border:1px solid #343e48;border-radius:9px;padding:0 12px}.board-toolbar button,.compat-toolbar button{cursor:pointer}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:10px}.feature{border:1px solid #303944;background:#0d1116;border-radius:12px;padding:14px;min-height:160px;display:flex;flex-direction:column;gap:7px}.feature.dim{display:none}.feature-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.feature h3{font-size:15px;margin:0;line-height:1.2}.feature p{margin:0;color:#aab5bf;font-size:12px;line-height:1.5}.feature small{margin-top:auto;color:#687583;font-size:9px}.state-pill,.kind-pill,.compat-pill{display:inline-block;border-radius:999px;padding:4px 8px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.state-production{background:#22c55e;color:#04140a}.state-beta{background:#4ade80;color:#05210e}.state-proof{background:#f472b6;color:#210316}.state-partial{background:#facc15;color:#1c1500}.state-needed{background:#fb923c;color:#231000}.state-open{background:#60a5fa;color:#03152a}.kind-have{color:#4ade80}.kind-need{color:#fb923c}.kind-want,.kind-future{color:#f472b6}.kind-unknown{color:#60a5fa}
+/* Stage atlas */
+.stage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:12px}.stage-card{border:1px solid #303944;background:#0d1116;border-radius:14px;padding:16px;cursor:pointer;transition:.15s transform,.15s border-color}.stage-card:hover,.stage-card.active{border-color:#fff;transform:translateY(-1px)}.stage-card .stage-top{display:flex;justify-content:space-between;gap:12px}.stage-card h3{margin:0;font-size:20px}.stage-id{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:#8d99a6}.stage-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}.stage-metric{border:1px solid #28313a;border-radius:9px;padding:8px}.stage-metric b{display:block;font-size:17px}.stage-metric span{font-size:9px;color:#7f8b98}.pickup-mix{display:flex;gap:5px;flex-wrap:wrap}.pickup-chip{border:1px solid #303944;border-radius:999px;padding:4px 7px;font-size:9px;color:#b9c4cf}.stage-detail{border:1px solid var(--b);background:rgba(17,21,26,.94);border-radius:15px;padding:18px;margin-top:12px;min-height:155px}.stage-detail h2{margin:6px 0}.stage-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.stage-fact{border-top:1px solid #29313a;padding-top:7px}.stage-fact b{display:block;color:#7f8b98;text-transform:uppercase;font-size:9px}.stage-fact span{font-size:11px;line-height:1.4}.stage-notes{margin:12px 0 0;padding-left:18px;color:#aeb8c3;font-size:12px;line-height:1.5}
+/* Compatibility matrix */
+.compat-shell{overflow:auto}.compat-grid{min-width:930px;display:grid;grid-template-columns:120px 205px 210px 210px 115px;border:1px solid #2e3740;border-radius:12px;overflow:hidden}.compat-grid>div{padding:10px 11px;border-right:1px solid #29313a;border-bottom:1px solid #29313a;font-size:11px;line-height:1.4}.compat-grid .ch{background:#151b21;color:#91a0ae;text-transform:uppercase;font-size:9px;font-weight:900;letter-spacing:.06em}.compat-grid .crow{display:contents}.compat-grid .crow.hidden{display:none}.compat-area{color:#8592a0;font-weight:800}.compat-cap{font-weight:800;font-size:12px!important}.compat-detail{color:#9fabb6}.cs-covered,.cs-established{background:rgba(34,197,94,.18);color:#79e69b}.cs-runtime{background:rgba(74,222,128,.21);color:#89f0a8}.cs-partial,.cs-pending{background:rgba(250,204,21,.17);color:#f9dc5c}.cs-missing{background:rgba(251,146,60,.17);color:#ffad75}.cs-rejected{background:rgba(248,113,113,.18);color:#ff9696}
+/* Patch-site overlay */
+.mem-toolbar{grid-template-columns:190px minmax(240px,1fr) auto auto}.patch-toggle{display:flex!important;align-items:center!important;gap:8px!important;align-self:end;height:42px;border:1px solid #343e48;border-radius:9px;padding:0 10px!important;color:#c7d1db!important;background:#0e1216}.patch-toggle input{height:auto!important;margin:0;accent-color:#fff}.patch-mark{position:absolute;width:9px;height:9px;border:1px solid #fff;transform:rotate(45deg);z-index:7;cursor:pointer;padding:0}.patch-mark.prod{background:#38bdf8}.patch-mark.proof{background:#f472b6}.patch-mark:hover{transform:rotate(45deg) scale(1.35)}.patch-legend{font-size:10px;color:#8f9ba7;margin:6px 0 0}.patch-legend i{display:inline-block;width:8px;height:8px;transform:rotate(45deg);margin:0 5px 0 12px;border:1px solid #fff}.patch-legend i:first-child{margin-left:0}.patch-legend .prod{background:#38bdf8}.patch-legend .proof{background:#f472b6}
+@media(max-width:820px){.mem-stats,.board-stats,.compat-stats,.stage-stats{grid-template-columns:1fr 1fr}.mem-toolbar,.board-toolbar,.compat-toolbar{grid-template-columns:1fr}.mem-detail .meta,.stage-detail-grid{grid-template-columns:1fr}}
+@media(max-width:430px){.mem-stats,.board-stats,.compat-stats,.stage-stats{grid-template-columns:1fr}}
 </style></head><body><main class="wrap">
-<header class="hero"><div><p class="ey">Mortal Kombat Mythologies: Sub-Zero · N64 USA Rev. 0</p><h1>MKMSZ Research Maps</h1><p class="lede">Decompilation readiness plus literal ROM/RDRAM ownership views, grounded in the current MKMSZR knowledge base.</p></div><div class="snap"><span>Readiness snapshot</span><strong>2026-09-23</strong></div></header>
-<nav class="tabs" aria-label="Map views"><button class="tab active" data-view="readiness">Decomp Readiness</button><button class="tab" data-view="rom">ROM Space</button><button class="tab" data-view="rdram">RDRAM Space</button></nav>
+<header class="hero"><div><p class="ey">Mortal Kombat Mythologies: Sub-Zero · N64 USA Rev. 0</p><h1>MKMSZ Research Maps</h1><p class="lede">Interactive project, stage, compatibility, decompilation, and literal memory maps grounded in the current MKMSZR knowledge base.</p></div><div class="snap"><span>Readiness snapshot</span><strong>2026-09-23</strong></div></header>
+<nav class="tabs" aria-label="Research views"><button class="tab active" data-view="readiness">Decomp Readiness</button><button class="tab" data-view="features">Feature Board</button><button class="tab" data-view="stages">Stage Atlas</button><button class="tab" data-view="compat">MKT → MKMSZ</button><button class="tab" data-view="rom">ROM Space</button><button class="tab" data-view="rdram">RDRAM Space</button></nav>
 <section id="view-readiness" class="view active">
 <section class="card"><p><b>How to read this:</b> each square is one equal-sized <b>knowledge unit</b>, not one literal function or an equal number of ROM bytes. Green is stricter than “we can patch it”: it means the important data/control contract looks understood enough for a plausible C analogue.</p><div class="legend"><div class="li"><span class="sw g"></span><b>Green</b> — decomp-ready</div><div class="li"><span class="sw y"></span><b>Yellow</b> — partial</div><div class="li"><span class="sw b"></span><b>Black</b> — largely unknown</div></div></section>
 <section class="stats"><div class="stat sg"><span>Green</span><strong id="gc"></strong><small id="gp"></small></div><div class="stat sy"><span>Yellow</span><strong id="yc"></strong><small id="yp"></small></div><div class="stat"><span>Black</span><strong id="bc"></strong><small id="bp"></small></div><div class="stat"><span>Total</span><strong id="tc"></strong><small>knowledge units</small></div></section>
@@ -22,10 +33,33 @@
 <section class="card sources"><p class="ey">Evidence base</p><h2>Current MKMSZR research sources</h2><p class="desc">Ratings are maintained manually from the version-controlled MKMSZR Wiki. Proofs are not silently promoted to production knowledge, and a known address alone does not make a unit green.</p><div id="sources"></div></section>
 </section>
 
+
+<section id="view-features" class="view">
+<section class="card"><p class="ey">What exists · what is required · what is still weird</p><h2>MKMSZR Feature Board</h2><p class="desc">A public-facing snapshot of the project's shipped systems, production betas, proof-only breakthroughs, 1.0 requirements, open questions, and post-1.0 research. This is intentionally catchier than the canonical Roadmap; the Wiki remains authoritative.</p><div class="mem-note">“Proof” means the idea worked in a bounded experiment, not that it ships. “Needed” means a current 1.0 release requirement. “Open” is deliberately unresolved rather than silently guessed.</div></section>
+<section id="feature-stats" class="board-stats"></section>
+<section class="board-toolbar"><label>State<select id="feature-state"></select></label><label>Intent<select id="feature-kind"></select></label><label>Search<input id="feature-q" type="search" placeholder="global items, HUD, Sektor, rainbow"></label><button id="feature-reset">Reset</button></section>
+<section class="card"><div class="head"><div><p class="ey">Project surface</p><h2>Features and goals</h2></div><p class="hint">Colored cards describe current project state, not importance or completion percentage.</p></div><div id="feature-grid" class="feature-grid"></div></section>
+</section>
+
+<section id="view-stages" class="view">
+<section class="card"><p class="ey">Eight main stages · 84 ordinary pickup records</p><h2>Stage Atlas</h2><p class="desc">Stage-by-stage resource and pickup topology from the normalized canonical catalogs. Click a stage for file mapping, resource-slot shape, pickup mix, evidence, and stage-local caveats.</p><div class="mem-note">Empty logical selectors are shown as catalog facts only. They are not free ROM/RDRAM storage and are never promoted to allocation claims here.</div></section>
+<section id="stage-stats" class="stage-stats"></section>
+<section class="card"><div id="stage-grid" class="stage-grid"></div></section>
+<section id="stage-detail" class="stage-detail"><span class="badge n">SELECT A STAGE</span><h2>Inspect a stage</h2><p class="desc">Choose one of the eight stage cards above.</p></section>
+</section>
+
+<section id="view-compat" class="view">
+<section class="card"><p class="ey">Donor semantics → target-native behavior</p><h2>MKT → MKMSZ Compatibility Matrix</h2><p class="desc">A compact view of what can already be translated, what works only in bounded proofs, what still needs an adapter, and which tempting “direct” paths have been explicitly rejected.</p><div class="mem-note">This is a source-level translation matrix, not a binary-compatibility claim. MKT code, pointers, selectors, codecs, and object layouts are not assumed interchangeable with MKMSZ.</div></section>
+<section id="compat-stats" class="compat-stats"></section>
+<section class="compat-toolbar"><label>Area<select id="compat-area"></select></label><label>Status<select id="compat-status"></select></label><label>Search<input id="compat-q" type="search" placeholder="animation, reaction, Type-5, no-repel"></label><button id="compat-reset">Reset</button></section>
+<section class="card compat-shell"><div id="compat-grid" class="compat-grid"><div class="ch">Area</div><div class="ch">Capability</div><div class="ch">MKT / donor side</div><div class="ch">MKMSZ target</div><div class="ch">Status</div></div></section>
+<section id="compat-detail" class="detail"><span class="badge n">MATRIX</span><h2>Translation status</h2><p class="desc">Rows summarize the current canonical compatibility owners. Hover or click is not required; each row is self-contained, and search/filtering narrows the matrix.</p></section>
+</section>
+
 <section id="view-rom" class="view">
 <section class="card mem-intro"><p class="ey">Literal cartridge space · 16 MiB</p><h2>ROM Space Map</h2><p class="desc">A 16 × 16 grid of 64 KiB buckets covering <code>0x00000000..0x01000000</code>. Colored bars show only bounded intervals currently recorded by the canonical memory map. Dark remainder is <b>unknown / unclassified</b> — never implied free.</p><div class="mem-note">ROM offsets are not runtime VAs. Proof-only regions remain artifact-specific. Zero/FF/padding is not reusable space without lifecycle evidence.</div><div id="rom-legend" class="mem-legend"></div></section>
 <section id="rom-stats" class="mem-stats"></section>
-<section class="mem-toolbar"><label>Classification<select id="rom-class"></select></label><label>Search intervals<input id="rom-q" type="search" placeholder="title, payload, file 0x87, Sektor"></label><button id="rom-reset">Reset</button></section>
+<section class="mem-toolbar"><label>Classification<select id="rom-class"></select></label><label>Search intervals<input id="rom-q" type="search" placeholder="title, payload, file 0x87, Sektor"></label><label class="patch-toggle"><input id="rom-patches" type="checkbox" checked> Patch-site overlay</label><button id="rom-reset">Reset</button></section><p id="rom-patch-legend" class="patch-legend"></p>
 <section class="card"><div class="head"><div><p class="ey">16 columns × 16 rows</p><h2>64 KiB buckets</h2></div><p class="hint">Click a cell to inspect every exact canonical interval intersecting it. Tiny intervals are intentionally drawn as narrow markers rather than coloring the entire bucket.</p></div><div class="mem-scroll"><div id="rom-grid" class="mem-grid"></div></div></section>
 <section id="rom-detail" class="mem-detail"></section>
 <section class="card mem-list"><div class="mem-list-head"><div><p class="ey">Exact bounded records</p><h2>ROM intervals</h2></div><p class="hint">Current snapshot only; the Wiki remains authoritative.</p></div><div id="rom-records" class="mem-records"></div></section>
@@ -34,13 +68,13 @@
 <section id="view-rdram" class="view">
 <section class="card mem-intro"><p class="ey">Physical RDRAM · 4 MiB</p><h2>RDRAM Space Map</h2><p class="desc">A 16 × 16 grid of 16 KiB buckets covering physical <code>0x000000..0x400000</code>. Details also show proven KSEG0/KSEG1 aliases, but aliases are two views of the <b>same bytes</b> and are never double-counted.</p><div class="mem-note">Stage-overlay VAs require stage/source identity. Dynamic/allocator-owned space is not a cave. Unknown physical space remains unknown, not free.</div><div id="rdram-legend" class="mem-legend"></div></section>
 <section id="rdram-stats" class="mem-stats"></section>
-<section class="mem-toolbar"><label>Classification<select id="rdram-class"></select></label><label>Search intervals<input id="rdram-q" type="search" placeholder="inventory, state, XP, 0x801AF420"></label><button id="rdram-reset">Reset</button></section>
+<section class="mem-toolbar"><label>Classification<select id="rdram-class"></select></label><label>Search intervals<input id="rdram-q" type="search" placeholder="inventory, state, XP, 0x801AF420"></label><label class="patch-toggle"><input id="rdram-patches" type="checkbox" checked> Patch-site overlay</label><button id="rdram-reset">Reset</button></section><p id="rdram-patch-legend" class="patch-legend"></p>
 <section class="card"><div class="head"><div><p class="ey">16 columns × 16 rows</p><h2>16 KiB physical buckets</h2></div><p class="hint">Click a cell to inspect exact physical ownership and the established cached/uncached aliases.</p></div><div class="mem-scroll"><div id="rdram-grid" class="mem-grid"></div></div></section>
 <section id="rdram-detail" class="mem-detail"></section>
 <section class="card mem-list"><div class="mem-list-head"><div><p class="ey">Exact bounded records</p><h2>RDRAM intervals</h2></div><p class="hint">Physical records only; aliases are display metadata.</p></div><div id="rdram-records" class="mem-records"></div></section>
 </section>
 <footer><span>MKMSZ Research Maps · readiness is qualitative; memory views show only explicitly bounded canonical intervals.</span><span class="byline">By Smeag</span></footer>
-</main><script src="memory-data.js"></script><script>
+</main><script src="memory-data.js"></script><script src="patch-data.js"></script><script src="stage-data.js"></script><script src="project-data.js"></script><script>
 const D={cols:40,rows:[
 ["Frontend / boot / title",8,10,22,[["g","Debug stage selector","0x8000D0B8","Runtime-confirmed menu behavior and production routing are understood."],["g","Legal/logo/title owner","0x80079510","Owning frontend routine and narrow presentation bypasses are mapped."],["g","Frontend fade / normalization","0x800615D8","Call behavior is understood and preserved after the logo bypass."],["y","Title handoff","0x80078C40","Known handoff point, but the complete frontend state machine is not reconstructed."],["g","Title image package","global file 0x5E","Compression round-trip, relocation, palette handling and replacement are understood."],["y","Options/config frontend","frontend subsystem","Individual settings are patchable, but the overall menu/config logic is not decompiled."]]],
 ["Stage flow / loading",6,10,24,[["g","Stage transition handler","0x80015088","Selection-to-current-stage transition behavior is established."],["g","Safe eight-stage flow","native stages 0,1,2,3,4,5,8,9","Selector routing and problematic entries are understood."],["y","Automatic stage save","0x800798A8","Identified and selectively bypassed, but save-flow internals are partial."],["y","Stage initialization order","stage lifecycle","Several critical boundaries are known through proofs; the complete state machine is not."],["y","Mission Objective transition","stage frontend","Important allocation/lifecycle behavior is known experimentally."]]],
@@ -49,7 +83,7 @@ const D={cols:40,rows:[
 ["XP / save / persistence",10,13,17,[["g","Central XP award","0x8002E104","Central XP path and current XP storage are identified."],["g","XP tier evaluator","0x80074FBC","Threshold/clamp behavior and cap table are mapped."],["g","Save-loader XP restore","0x80078A18","XP restore field at save-record +0x7C is identified."],["g","Runtime state V2","0x801AF720..0x801AF81F","Versioned header, pickup bitsets and progression words are documented."],["g","Pickup persistence","84 ordinary pickups","Capture/restore architecture is runtime-confirmed across representative locations in all eight stages."],["y","Nine-tier progression","85..7354 XP","Architecture exists and early tiers/lifecycle are confirmed; exhaustive nine-tier coverage is pending."],["y","HP persistence","run lifecycle","Required for full run lifecycle but not yet resolved."],["y","Lives / continues persistence","run lifecycle","Required lifecycle behavior remains pending."],["y","Full save structure","save system","Relevant fields and paths are mapped, not the complete save format."]]],
 ["Files / arena / resources",12,13,15,[["g","Raw global-file loader","0x80065D64","Runtime-confirmed synchronous raw-file load path."],["g","Arena synchronization helper","0x80066390","Bootstrap interaction is implementation-confirmed."],["g","Resource-entry resolver","0x800281A0","Outer selector to stage-relative descriptor resolution is mapped."],["g","Resource-backed actor helper","0x80028128","Constructor-helper contract is understood."],["g","Native file-table use","global file table","Registration and relocation are used by multiple successful proofs."],["y","Cross-stage resource planner","resource materialization","Planner/proofs exist, but production integration and all resource families are unfinished."],["y","Arena lifetime / budget","runtime allocation","Important bounds are known experimentally; whole-engine allocation behavior is not decompiled."],["y","Foreign key resources","cross-stage items","Visual residency is increasingly understood; destination-safe callback behavior is pending."]]],
 ["Native UI / text / render",7,12,21,[["g","Gameplay HUD owner","0x8005BFB0","HUD function and its submit calls are mapped."],["g","Render-node allocator","0x8002018C","0x58-byte node allocation is runtime-confirmed."],["g","Render-node submit","0x8001EAE4","Runtime-confirmed submission path used by MKMSZR UI."],["g","Render-node structure","0x58 bytes","Vertex XY and per-vertex RGBA fields are documented."],["g","Native text draw","0x80073E74","Arbitrary custom RDRAM strings render successfully."],["g","Text width helper","0x80074084","Native font width path is identified and tested."],["y","Alternate renderer family","0x80073CEC / 0x8001E578","Known renderer family, but not a universal HUD abstraction."],["y","Textured UI objects","Toasty visual v15-v17","v15 runtime-confirms genuine CI8 image rendering through a dynamic HUD texture slot; v16 runtime-confirms the clone-local palette selector. Correct RGBA5551 palette output in v17 is still pending runtime validation."],["b","General renderer architecture","graphics engine","No comprehensive reconstruction of render queues/material state/frame composition yet."]]],
-["Fighter graphics / Type-5",16,12,12,[["g","Image dispatch","0x8000322C","Embedded image dispatch and the exact Type-5 special case are mapped."],["g","Type-5 wrapper","0x80003314","Dimensions, model-table pointer, bitstream and arena-output contract are known."],["g","Type-5 decoder","0x80065E00","2-row × 4-pixel block grammar is reconstructed."],["g","Sub-Zero Type-5 corpus","341 frames","Entire stock fighter corpus has been decoded and benchmarked."],["g","Type-5 re-encoder","encoder v2","Pixel round-trip and stock-parity compression behavior are implementation-confirmed."],["g","Shared dictionary packing","multi-model Type-5","Multiple entropy models sharing one dictionary are understood and used."],["g","Player TLUT / palette path","64-entry TLUT","Native fighter palette adaptation is runtime-confirmed."],["g","Runtime rainbow palette rebinding","0x8001BDA0 / file 0x87","Rainbow v01 runtime-confirms live Sub-Zero palette rebinding through the native allocation/refcount path while limiting changes to clothing indices 0x21..0x3F; the proof composition remains non-production."],["g","Sektor transplant pipeline","MKT → MKMSZ","Large common animation sets and donor resource translation are runtime-confirmed."],["y","Rare/special fighter presentation","fighter states","Many common states are known; special and rare families remain incomplete."],["b","All fighter resource semantics","fighter package","Graphics storage is much better understood than every surrounding descriptor/control field."]]],
+["Fighter graphics / Type-5",16,12,12,[["g","Image dispatch","0x8000322C","Embedded image dispatch and the exact Type-5 special case are mapped."],["g","Type-5 wrapper","0x80003314","Dimensions, model-table pointer, bitstream and arena-output contract are known."],["g","Type-5 decoder","0x80065E00","2-row × 4-pixel block grammar is reconstructed."],["g","Sub-Zero Type-5 corpus","341 frames","Entire stock fighter corpus has been decoded and benchmarked."],["g","Type-5 re-encoder","encoder v2","Pixel round-trip and stock-parity compression behavior are implementation-confirmed."],["g","Shared dictionary packing","multi-model Type-5","Multiple entropy models sharing one dictionary are understood and used."],["g","Player TLUT / palette path","64-entry TLUT","Native fighter palette adaptation is runtime-confirmed."],["g","Runtime rainbow palette rebinding","0x8001BDA0 / file 0x87","The normal rainbow outfit mode now uses the Runtime-confirmed 64-phase native palette path in browser/CLI production, limited to clothing indices 0x21..0x3F. Seed RAINBOW64 reproduces the manually validated proof byte-for-byte."],["g","Sektor transplant pipeline","MKT → MKMSZ","Large common animation sets and donor resource translation are runtime-confirmed."],["y","Rare/special fighter presentation","fighter states","Many common states are known; special and rare families remain incomplete."],["b","All fighter resource semantics","fighter package","Graphics storage is much better understood than every surrounding descriptor/control field."]]],
 ["Player construction / actions",5,13,22,[["g","Player construction path","0x8002EC78 / 0x8002ECF4","Correct player-construction family is identified."],["g","Horizontal velocity helper","0x8002B1EC","Writes actor movement fields and corrected a major earlier misconception."],["y","Action callback installer","0x80032CD4","Top-level callback transfer/non-return contract is understood; whole action system is not."],["y","Scheduler transfer shim","0x8004AA4C","Correct context-transfer role is known."],["y","Ice action root","0x8004AB84","Complete native ice action root is identified."],["y","Projectile flight callback","0x8004B82C","Correct projectile role is established."],["y","Projectile setup","0x8004CC14","Projectile actor-field behavior is mapped."],["y","MKT combo grammar translation","runtime proof v62","Record structure is compatible, but donor reaction selectors still require semantic translation."],["b","Complete player state machine","all player actions","Only selected roots and state families are mapped."]]],
 ["Combat / hit / collision",3,10,27,[["g","Sektor combo control records","runtime proof v62","Several genuine MKT combo strings are runtime-confirmed after selector translation."],["y","Grab / throw attacker path","fighter action","Runtime behavior/presentation has been ported, but the whole combat contract is not reconstructed."],["y","Knockback reaction semantics","reaction selectors","Important cross-game selector mismatch is proven; full semantic map is incomplete."],["y","Hit / knockdown / stumble states","player reactions","Several individual presentation states are runtime-confirmed."],["b","Collision engine","combat collision","No complete hitbox/hurtbox/collision-system decompilation exists."],["b","Damage resolution","combat core","Damage calculation and resolution are not comprehensively reconstructed."],["b","Victim reaction state machine","combat reactions","Player-victim grab/throw and broader reaction families remain incomplete."]]],
 ["Enemy spawning",5,12,23,[["g","Enemy stream interpreter","0x80071500","Shared ordinary-enemy command interpreter is identified."],["g","Spawn parameter helper","0x800719F0","Spawn index/type helper is mapped."],["g","Shared fighter constructor","0x80071B20","Resource-slot lookup is static/runtime-confirmed."],["g","Lower fighter allocator","0x8002FCDC","Descriptor/type storage path is mapped."],["g","Spawn-record grammar","0x1C / 0x20 records","Coordinates, type, quota and activation fields are documented."],["y","Enemy stream opcodes","0..9","Several effects are known, but gameplay meanings of opcodes 1, 2 and 9 remain unresolved."],["y","Cross-stage enemy residency","Temple monk in Fire","Construction/resource feasibility is runtime-confirmed; arbitrary compatibility is not."],["b","All encounter scripts","stage encounters","Ordinary streams are only one part of encounter orchestration."]]],
@@ -58,7 +92,7 @@ const D={cols:40,rows:[
 ["Audio / music / SFX",2,8,30,[["g","Gameplay SFX wrapper","0x80064C18","Descriptor-table lookup and playback handoff are mapped."],["g","Raw sound playback entry","0x80080A88","Runtime sound-definition selection path is identified."],["y","Voice allocator","0x8007EC4C","Low-level sound-definition consumption is statically mapped."],["y","N64 ADPCM donor feasibility","sound banks","Compatible donor-audio work demonstrates meaningful understanding of the native family."],["b","Music sequencer","music engine","No comprehensive music-system reconstruction is documented."],["b","Sound-bank loader/editor","audio system","Only selected playback/bank paths are understood."]]],
 ["Bosses / camera / effects / misc",0,6,34,[["y","Boss exclusions / constructors","special encounters","Several bosses are identified as dedicated non-ordinary construction paths."],["y","Effects/render constructor candidate","0x8005EF5C","Correctly classified away from enemy loading, but not deeply reconstructed."],["y","Geometry/camera family","0x80064788","Known not to be the sought enemy loader; internal semantics remain limited."],["b","Boss AI and scripting","bosses","Per-boss systems are essentially separate reverse-engineering projects."],["b","Camera system","camera","No complete camera-control reconstruction."],["b","Particles / environmental FX","effects","Broadly unmapped."],["b","Misc engine services","engine","Large portions of the executable have not been studied at function-semantic depth."]]]
 ]};
-const src=[["Project Status","Project-Status.md"],["Memory & Allocation Map","Memory-and-Allocation-Map.md"],["Architecture Overview","Architecture-Overview.md"],["Function Registry","Function-Registry.md"],["Data Structures & Encodings","Data-Structures-and-Encodings.md"],["Native HUD & UI","Native-HUD-and-UI.md"],["Enemy Randomization","Enemy-Randomization.md"],["MKT Compatibility","MKT-to-MKMSZ-Compatibility-Layer.md"]];
+const src=[["Project Status","Project-Status.md"],["Memory & Allocation Map","Memory-and-Allocation-Map.md"],["Stage Catalogs","Stage-Catalogs.md"],["Architecture Overview","Architecture-Overview.md"],["Function Registry","Function-Registry.md"],["Data Structures & Encodings","Data-Structures-and-Encodings.md"],["Native HUD & UI","Native-HUD-and-UI.md"],["Palette & Recoloring","Palette-and-Recoloring.md"],["Enemy Randomization","Enemy-Randomization.md"],["MKT Compatibility","MKT-to-MKMSZ-Compatibility-Layer.md"]];
 src.forEach(([n,p])=>{const a=document.createElement("a");a.href="https://github.com/smeagol44/MKMSZ-Randomizer/blob/main/wiki/"+p;a.target="_blank";a.rel="noreferrer";a.textContent=n;document.querySelector("#sources").appendChild(a)});
 const totals=D.rows.reduce((a,r)=>(a.g+=r[1],a.y+=r[2],a.b+=r[3],a),{g:0,y:0,b:0});totals.a=totals.g+totals.y+totals.b;
 for(const [s,id] of [["g","g"],["y","y"],["b","b"]]){document.querySelector("#"+id+"c").textContent=totals[s]+" / "+totals.a;document.querySelector("#"+id+"p").textContent=Math.round(totals[s]/totals.a*100)+"%"}document.querySelector("#tc").textContent=totals.a;
@@ -67,6 +101,105 @@ function shuf(a,seed){let x=seed>>>0;for(let i=a.length-1;i>0;i--){x=(Math.imul(
 function fill(s,row){return s==="g"?[s,"Mapped subsystem slice",row,"Current evidence covers the important data/control contract well enough that a C analogue is plausible."]:s==="y"?[s,"Partially mapped subsystem slice",row,"Useful entry points, structures or behavior are known, but a faithful rewrite would still require focused reverse engineering."]:[s,"Unmapped subsystem slice",row,"No durable function-level characterization in the current Wiki is sufficient to call this decomp-ready."]}
 D.rows.forEach((r,ri)=>{const line=document.createElement("div");line.className="row";const lab=document.createElement("div");lab.className="rl";lab.innerHTML="<span>"+r[0]+"</span><small>"+r[1]+"G "+r[2]+"Y "+r[3]+"B</small>";line.appendChild(lab);let c=r[4].slice(),u={g:0,y:0,b:0};c.forEach(x=>u[x[0]]++);[["g",r[1]],["y",r[2]],["b",r[3]]].forEach(([s,n])=>{for(let i=u[s];i<n;i++)c.push(fill(s,r[0]))});shuf(c,0x4d4b0000+ri*977).forEach((x,ci)=>{const b=document.createElement("button");b.type="button";b.className="cell "+x[0];b.dataset.s=x[0];b.dataset.q=(r[0]+" "+x.slice(1).join(" ")).toLowerCase();b.title=x[1];b.onclick=()=>{if(sel)sel.classList.remove("sel");sel=b;b.classList.add("sel");detail.innerHTML='<span class="badge '+x[0]+'">'+(x[0]==="g"?"GREEN — DECOMP-READY":x[0]==="y"?"YELLOW — PARTIAL":"BLACK — LARGELY UNKNOWN")+'</span><h2>'+x[1]+'</h2><p class="addr">'+x[2]+'</p><p class="desc">'+x[3]+'</p>'};btns.push(b);line.appendChild(b)});grid.appendChild(line)});
 function filt(){const f=document.querySelector("#f").value,q=document.querySelector("#q").value.trim().toLowerCase();btns.forEach(b=>{const ok=(f==="all"||b.dataset.s===f)&&(!q||b.dataset.q.includes(q));b.classList.toggle("dim",!ok);b.classList.toggle("hit",!!q&&ok)})}document.querySelector("#f").onchange=filt;document.querySelector("#q").oninput=filt;document.querySelector("#r").onclick=()=>{document.querySelector("#f").value="all";document.querySelector("#q").value="";filt()};
+
+
+const projectData=window.MKMSZ_PROJECT_DATA,stageData=window.MKMSZ_STAGE_DATA;
+const wikiBase="https://github.com/smeagol44/MKMSZ-Randomizer/blob/main/wiki/";
+
+function featureRender(){
+  const data=projectData.featureBoard,grid=document.querySelector("#feature-grid"),
+        sf=document.querySelector("#feature-state"),kf=document.querySelector("#feature-kind"),
+        q=document.querySelector("#feature-q");
+  const states=["production","beta","proof","partial","needed","open"],kinds=["have","need","want","unknown","future"];
+  const labels={production:"Production",beta:"Production beta",proof:"Proof only",partial:"Partial / research",needed:"Needed for 1.0",open:"Open question",
+    have:"Have",need:"Need",want:"Want / prove",unknown:"Unknown / unresolved",future:"Future / post-1.0"};
+  sf.innerHTML='<option value="all">All states</option>'+states.map(x=>'<option value="'+x+'">'+labels[x]+'</option>').join("");
+  kf.innerHTML='<option value="all">All intents</option>'+kinds.map(x=>'<option value="'+x+'">'+labels[x]+'</option>').join("");
+  const ship=data.filter(x=>x.state==="production"||x.state==="beta").length,
+        needed=data.filter(x=>x.state==="needed").length,
+        proofs=data.filter(x=>x.state==="proof"||x.state==="partial").length,
+        open=data.filter(x=>x.state==="open").length;
+  document.querySelector("#feature-stats").innerHTML=
+    '<div class="board-stat"><span>Shipping / beta</span><strong>'+ship+'</strong></div>'+
+    '<div class="board-stat"><span>1.0 needed</span><strong>'+needed+'</strong></div>'+
+    '<div class="board-stat"><span>Proof / partial</span><strong>'+proofs+'</strong></div>'+
+    '<div class="board-stat"><span>Open questions</span><strong>'+open+'</strong></div>';
+  function refresh(){
+    const s=sf.value,k=kf.value,qq=q.value.trim().toLowerCase();grid.innerHTML="";
+    data.filter(x=>(s==="all"||x.state===s)&&(k==="all"||x.kind===k)&&(!qq||Object.values(x).join(" ").toLowerCase().includes(qq))).forEach(x=>{
+      const d=document.createElement("article");d.className="feature";
+      d.innerHTML='<div class="feature-head"><div><span class="kind-pill kind-'+x.kind+'">'+labels[x.kind]+'</span><h3>'+x.name+'</h3></div><span class="state-pill state-'+x.state+'">'+labels[x.state]+'</span></div><p>'+x.detail+'</p><small>'+x.group+' · '+x.source+'</small>';
+      d.onclick=()=>window.open(wikiBase+x.source,"_blank","noopener");
+      d.style.cursor="pointer";grid.appendChild(d);
+    });
+    if(!grid.children.length)grid.innerHTML='<p class="mem-empty">No features match this filter.</p>';
+  }
+  sf.onchange=refresh;kf.onchange=refresh;q.oninput=refresh;document.querySelector("#feature-reset").onclick=()=>{sf.value="all";kf.value="all";q.value="";refresh()};refresh();
+}
+
+function stageRender(){
+  const data=stageData.stages,grid=document.querySelector("#stage-grid"),detail=document.querySelector("#stage-detail");
+  document.querySelector("#stage-stats").innerHTML=
+    '<div class="stage-stat"><span>Main stages</span><strong>'+data.length+'</strong></div>'+
+    '<div class="stage-stat"><span>Ordinary pickups</span><strong>'+data.reduce((n,x)=>n+x.pickups,0)+'</strong></div>'+
+    '<div class="stage-stat"><span>Outer resource slots</span><strong>'+data.reduce((n,x)=>n+x.outerSlots,0)+'</strong></div>'+
+    '<div class="stage-stat"><span>Runtime-mapped files</span><strong>'+data.filter(x=>x.runtimeBase).length+' / '+data.length+'</strong></div>';
+  let active=null;
+  data.forEach(x=>{
+    const d=document.createElement("article");d.className="stage-card";
+    d.innerHTML='<div class="stage-top"><div><p class="ey">Compact '+x.compact+' · native '+x.native+'</p><h3>'+x.name+'</h3></div><span class="stage-id">'+(x.resourceFileId?("file "+x.resourceFileId):"stage resource")+'</span></div>'+
+      '<div class="stage-metrics"><div class="stage-metric"><b>'+x.pickups+'</b><span>pickups</span></div><div class="stage-metric"><b>'+x.outerSlots+'</b><span>outer slots</span></div><div class="stage-metric"><b>'+x.fileSize.split(" ")[0]+'</b><span>resource size</span></div></div>'+
+      '<div class="pickup-mix">'+x.pickupMix.map(p=>'<span class="pickup-chip">'+p.count+'× '+p.name+'</span>').join("")+'</div>';
+    d.onclick=()=>{
+      if(active)active.classList.remove("active");active=d;d.classList.add("active");
+      detail.innerHTML='<span class="badge n">'+x.name.toUpperCase()+'</span><h2>'+x.name+' stage</h2>'+
+        '<div class="stage-detail-grid"><div class="stage-fact"><b>IDs</b><span>compact '+x.compact+' · native '+x.native+'</span></div>'+
+        '<div class="stage-fact"><b>Resource ROM</b><span>'+x.resourceRom+'</span></div>'+
+        '<div class="stage-fact"><b>Runtime base</b><span>'+x.runtimeBase+'</span></div>'+
+        '<div class="stage-fact"><b>File-table entry</b><span>'+x.fileTableEntry+(x.resourceFileId?' · global '+x.resourceFileId:'')+'</span></div>'+
+        '<div class="stage-fact"><b>Empty selectors</b><span>'+x.emptySlots+'</span></div>'+
+        '<div class="stage-fact"><b>Unknown slots</b><span>'+x.unknownSlots+'</span></div></div>'+
+        '<ul class="stage-notes">'+x.evidence.slice(0,2).concat(x.notes.slice(0,3)).map(n=>'<li>'+n+'</li>').join("")+'</ul>'+
+        '<p class="mem-source"><a target="_blank" rel="noreferrer" href="'+wikiBase+x.source+'">Open canonical '+x.name+' catalog</a></p>';
+      detail.scrollIntoView({behavior:"smooth",block:"nearest"});
+    };
+    grid.appendChild(d);
+  });
+}
+
+function compatRender(){
+  const data=projectData.compatibility,grid=document.querySelector("#compat-grid"),
+        area=document.querySelector("#compat-area"),status=document.querySelector("#compat-status"),q=document.querySelector("#compat-q");
+  const areas=[...new Set(data.map(x=>x.area))],statuses=["established","covered","runtime","partial","pending","missing","rejected"];
+  const labels={established:"Established",covered:"Covered",runtime:"Runtime proven",partial:"Partial",pending:"Pending",missing:"Missing adapter",rejected:"Rejected direct path"};
+  area.innerHTML='<option value="all">All areas</option>'+areas.map(x=>'<option>'+x+'</option>').join("");
+  status.innerHTML='<option value="all">All statuses</option>'+statuses.map(x=>'<option value="'+x+'">'+labels[x]+'</option>').join("");
+  const covered=data.filter(x=>x.status==="covered"||x.status==="established").length,
+        runtime=data.filter(x=>x.status==="runtime").length,
+        partial=data.filter(x=>x.status==="partial"||x.status==="pending").length,
+        missing=data.filter(x=>x.status==="missing"||x.status==="rejected").length;
+  document.querySelector("#compat-stats").innerHTML=
+    '<div class="compat-stat"><span>Established / covered</span><strong>'+covered+'</strong></div>'+
+    '<div class="compat-stat"><span>Runtime-proven translations</span><strong>'+runtime+'</strong></div>'+
+    '<div class="compat-stat"><span>Partial / pending</span><strong>'+partial+'</strong></div>'+
+    '<div class="compat-stat"><span>Missing / rejected direct</span><strong>'+missing+'</strong></div>';
+  const header=grid.innerHTML;
+  function refresh(){
+    const a=area.value,s=status.value,qq=q.value.trim().toLowerCase();grid.innerHTML=header;
+    data.filter(x=>(a==="all"||x.area===a)&&(s==="all"||x.status===s)&&(!qq||Object.values(x).join(" ").toLowerCase().includes(qq))).forEach(x=>{
+      const row=document.createElement("div");row.className="crow";
+      const cells=[
+        ['compat-area',x.area],['compat-cap',x.capability],['',x.donor],['',x.target],['compat-pill cs-'+x.status,labels[x.status]]
+      ];
+      cells.forEach(([cl,txt])=>{const d=document.createElement("div");d.className=cl;d.textContent=txt;d.title=x.detail;d.onclick=()=>{document.querySelector("#compat-detail").innerHTML='<span class="compat-pill cs-'+x.status+'">'+labels[x.status]+'</span><h2>'+x.capability+'</h2><p class="addr">'+x.area+'</p><p class="desc">'+x.detail+'</p><p class="mem-source"><a target="_blank" rel="noreferrer" href="'+wikiBase+x.source+'">Open canonical source</a></p>'};row.appendChild(d)});
+      grid.appendChild(row);
+    });
+    if(grid.children.length===5){const d=document.createElement("div");d.style.gridColumn="1 / -1";d.className="mem-empty";d.textContent="No compatibility rows match this filter.";grid.appendChild(d)}
+  }
+  area.onchange=refresh;status.onchange=refresh;q.oninput=refresh;document.querySelector("#compat-reset").onclick=()=>{area.value="all";status.value="all";q.value="";refresh()};refresh();
+}
+
+featureRender();stageRender();compatRender();
 
 const memClasses=[
 ["production","Production","c-production"],["stock-known","Stock known","c-stock-known"],["stock-unknown","Stock unknown / protected","c-stock-unknown"],["confirmed-free","Confirmed free","c-confirmed-free"],["candidate-free","Candidate free","c-candidate-free"],["dynamic","Dynamic / allocator-owned","c-dynamic"],["proof-only","Proof only","c-proof-only"],["rejected/conflict","Rejected / conflict","c-rejected-conflict"],["alias/view","Alias / view","c-alias-view"]];
@@ -78,95 +211,103 @@ function memMatches(r,cls,q){if(cls!=="all"&&r.class!==cls)return false;if(!q)re
 function memLegend(id,records){const box=document.querySelector("#"+id);box.innerHTML="";const counts={};records.forEach(r=>counts[r.class]=(counts[r.class]||0)+1);memClasses.forEach(([key,label,css])=>{const d=document.createElement("span");d.className="mem-key";d.innerHTML='<i class="'+css+'"></i>'+label+' <b>'+(counts[key]||0)+'</b>';box.appendChild(d)});const u=document.createElement("span");u.className="mem-key";u.innerHTML='<i class="c-unknown"></i>Unknown / unclassified';box.appendChild(u)}
 function memStats(space,key){const total=space.end-space.start,covered=memUnion(space.records),free=space.records.filter(r=>r.class==="confirmed-free").length;document.querySelector("#"+key+"-stats").innerHTML='<div class="mem-stat"><span>Bounded records</span><strong>'+space.records.length+'</strong><small>canonical intervals</small></div><div class="mem-stat"><span>Union coverage</span><strong>'+memBytes(covered)+'</strong><small>'+((covered/total)*100).toFixed(2)+'% of space</small></div><div class="mem-stat"><span>Grid bucket</span><strong>'+memBytes(space.bucketSize)+'</strong><small>256 total cells</small></div><div class="mem-stat"><span>Confirmed-free</span><strong>'+free+'</strong><small>current canonical records</small></div>'}
 function memDetail(key,space,title,records){const d=document.querySelector("#"+key+"-detail");if(!records.length){d.innerHTML='<span class="mem-badge c-unknown">UNKNOWN / UNCLASSIFIED</span><h2>'+title+'</h2><p class="mem-empty">No bounded interval in the current canonical memory map covers this selection. This is intentionally <b>not</b> treated as free space.</p>';return}let h='<span class="mem-badge c-'+records[0].class.replace("/","-")+'">'+memClassInfo[records[0].class]?.label.toUpperCase()+'</span><h2>'+title+'</h2>';records.forEach((r,i)=>{h+=(i?'<hr style="border:0;border-top:1px solid #29313a;margin:16px 0">':'')+'<code>'+r.id+'</code><div class="meta"><div><b>Exact interval</b><span>'+r.range+'</span></div><div><b>Class</b><span>'+r.class+'</span></div><div><b>Owner</b><span>'+r.owner+'</span></div><div><b>Scope</b><span>'+r.scope+'</span></div><div><b>Lifecycle</b><span>'+r.lifecycle+'</span></div><div><b>Evidence</b><span>'+r.evidence+'</span></div><div><b>Production safe for owner</b><span>'+r.production_safe+'</span></div><div><b>Guard / reference</b><span>'+r.reference+'</span></div>'+(r.aliases?'<div><b>Aliases</b><span>'+r.aliases+'</span></div>':'')+'</div><p class="desc">'+r.notes+'</p>'});d.innerHTML=h}
+
+function patchRangeFor(key,p){
+  if(key==="rom"&&Number.isFinite(p.romStart))return [p.romStart,p.romEnd];
+  if(key==="rdram"&&Number.isFinite(p.physicalStart))return [p.physicalStart,p.physicalEnd];
+  return null;
+}
+function patchDetail(key,p,bucketCount){
+  const d=document.querySelector("#"+key+"-detail"),prod=p.class==="production";
+  d.innerHTML='<span class="mem-badge '+(prod?'c-production':'c-proof-only')+'">'+(prod?'PRODUCTION PATCH SITE':'PROOF-ONLY PATCH SITE')+'</span>'+
+    '<h2>'+p.owner+'</h2><p class="addr">'+p.romSite+'</p><div class="meta">'+
+    '<div><b>Registry class</b><span>'+p.class+'</span></div><div><b>Context / VA</b><span>'+p.context+'</span></div>'+
+    '<div><b>Expected / guard</b><span>'+p.expected+'</span></div><div><b>Replacement / effect</b><span>'+p.effect+'</span></div>'+
+    '<div><b>Grid buckets</b><span>'+bucketCount+'</span></div><div><b>Source</b><span>'+p.source+'</span></div></div>'+
+    '<p class="mem-source"><a target="_blank" rel="noreferrer" href="'+wikiBase+'Address-and-Patch-Site-Registry.md">Open canonical patch-site registry</a></p>';
+}
 function memRender(key){
   const space=window.MKMSZ_MEMORY_DATA[key],
+        allPatches=window.MKMSZ_PATCH_DATA.patches.filter(p=>patchRangeFor(key,p)),
         grid=document.querySelector("#"+key+"-grid"),
         cls=document.querySelector("#"+key+"-class"),
         q=document.querySelector("#"+key+"-q"),
-        list=document.querySelector("#"+key+"-records");
+        list=document.querySelector("#"+key+"-records"),
+        patchToggle=document.querySelector("#"+key+"-patches"),
+        patchLegend=document.querySelector("#"+key+"-patch-legend");
   grid.innerHTML="";
   cls.innerHTML='<option value="all">All classifications</option>'+memClasses.map(x=>'<option value="'+x[0]+'">'+x[1]+'</option>').join("");
-  memLegend(key+"-legend",space.records);
-  memStats(space,key);
+  memLegend(key+"-legend",space.records);memStats(space,key);
+  patchLegend.innerHTML='<i class="prod"></i>production patch sites <b>'+allPatches.filter(p=>p.class==="production").length+'</b><i class="proof"></i>proof-only sites <b>'+allPatches.filter(p=>p.class==="proof-only").length+'</b>';
 
   const cells=[];
   for(let i=0;i<256;i++){
     const s=space.start+i*space.bucketSize,e=s+space.bucketSize,b=document.createElement("button");
-    b.type="button";
-    b.className="mem-cell";
-    b.title=memFmt(s)+".."+memFmt(e);
-    b.dataset.start=s;
-    b.dataset.end=e;
+    b.type="button";b.className="mem-cell";b.title=memFmt(s)+".."+memFmt(e);b.dataset.start=s;b.dataset.end=e;
     b.innerHTML='<span class="mem-mini">'+s.toString(16).toUpperCase().padStart(key==="rom"?6:5,"0")+'</span>';
-    grid.appendChild(b);
-    cells.push(b);
+    grid.appendChild(b);cells.push(b);
   }
 
   let selectedCells=[],selectedRecord=null;
   function clearSelection(){
-    selectedCells.forEach(b=>b.classList.remove("sel"));
-    selectedCells=[];
-    if(selectedRecord)selectedRecord.classList.remove("active");
-    selectedRecord=null;
+    selectedCells.forEach(b=>b.classList.remove("sel"));selectedCells=[];
+    if(selectedRecord)selectedRecord.classList.remove("active");selectedRecord=null;
   }
   function selectBuckets(start,end,recordButton){
-    clearSelection();
-    selectedCells=cells.filter(b=>start<+b.dataset.end&&end>+b.dataset.start);
+    clearSelection();selectedCells=cells.filter(b=>start<+b.dataset.end&&end>+b.dataset.start);
     selectedCells.forEach(b=>b.classList.add("sel"));
     if(recordButton){selectedRecord=recordButton;recordButton.classList.add("active")}
     if(selectedCells[0])selectedCells[0].scrollIntoView({behavior:"smooth",block:"center",inline:"center"});
     return selectedCells.length;
   }
+  function addPatchMarks(b,s,e){
+    b.querySelectorAll(".patch-mark").forEach(x=>x.remove());
+    if(!patchToggle.checked)return;
+    const hits=allPatches.filter(p=>{const r=patchRangeFor(key,p);return r[0]<e&&r[1]>s});
+    hits.slice(0,6).forEach((p,lane)=>{
+      const r=patchRangeFor(key,p),pos=Math.max(s,Math.min(e-1,r[0])),m=document.createElement("span");
+      m.setAttribute("role","button");m.tabIndex=0;m.className="patch-mark "+(p.class==="production"?"prod":"proof");
+      m.style.left=Math.max(4,Math.min(31,4+((pos-s)/space.bucketSize)*30))+"px";m.style.top=(16+(lane%3)*9)+"px";
+      m.title=(p.class==="production"?"Production":"Proof-only")+" patch · "+p.owner+" · "+p.romSite;
+      m.onclick=ev=>{ev.stopPropagation();const n=selectBuckets(r[0],r[1]);patchDetail(key,p,n)};m.onkeydown=ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();m.click()}};
+      b.appendChild(m);
+    });
+  }
 
   function refresh(){
     clearSelection();
-    const qq=q.value.trim().toLowerCase(),cc=cls.value,
-          visible=space.records.filter(r=>memMatches(r,cc,qq));
+    const qq=q.value.trim().toLowerCase(),cc=cls.value,visible=space.records.filter(r=>memMatches(r,cc,qq));
     cells.forEach(b=>{
       b.querySelectorAll(".mem-seg").forEach(x=>x.remove());
       const s=+b.dataset.start,e=+b.dataset.end,hits=visible.filter(r=>r.start<e&&r.end>s);
-      b.classList.toggle("dim",(cc!=="all"||qq)&&!hits.length);
+      const patchHits=patchToggle.checked?allPatches.filter(p=>{const pr=patchRangeFor(key,p);return pr[0]<e&&pr[1]>s}):[];
+      b.classList.toggle("dim",(cc!=="all"||qq)&&!hits.length&&!patchHits.length);
       hits.slice(0,5).forEach((r,lane)=>{
         const a=Math.max(s,r.start),z=Math.min(e,r.end),seg=document.createElement("i");
         seg.className="mem-seg "+(memClassInfo[r.class]?.css||"c-unknown");
-        seg.style.left=(((a-s)/space.bucketSize)*100)+"%";
-        seg.style.width=Math.max(((z-a)/space.bucketSize)*100,1.8)+"%";
-        seg.style.bottom=(4+lane*6)+"px";
-        seg.title=r.id+" "+r.range;
-        b.appendChild(seg);
+        seg.style.left=(((a-s)/space.bucketSize)*100)+"%";seg.style.width=Math.max(((z-a)/space.bucketSize)*100,1.8)+"%";seg.style.bottom=(4+lane*6)+"px";seg.title=r.id+" "+r.range;b.appendChild(seg);
       });
-      b.onclick=()=>{
-        clearSelection();
-        b.classList.add("sel");
-        selectedCells=[b];
-        const all=visible.filter(r=>r.start<e&&r.end>s);
-        memDetail(key,space,memFmt(s)+" .. "+memFmt(e)+" bucket",all);
-      };
+      addPatchMarks(b,s,e);
+      b.onclick=()=>{clearSelection();b.classList.add("sel");selectedCells=[b];const all=visible.filter(r=>r.start<e&&r.end>s);memDetail(key,space,memFmt(s)+" .. "+memFmt(e)+" bucket",all)};
     });
-
     list.innerHTML="";
     visible.forEach(r=>{
-      const b=document.createElement("button");
-      b.className="mem-record";
-      b.innerHTML='<strong>'+r.owner+'</strong><span>'+r.id+' · '+r.range+' · '+r.class+'</span>';
-      b.onclick=()=>{
-        const n=selectBuckets(r.start,r.end,b);
-        memDetail(key,space,r.owner+" · "+n+" grid bucket"+(n===1?"":"s"),[r]);
-      };
-      list.appendChild(b);
+      const b=document.createElement("button");b.className="mem-record";b.innerHTML='<strong>'+r.owner+'</strong><span>'+r.id+' · '+r.range+' · '+r.class+'</span>';
+      b.onclick=()=>{const n=selectBuckets(r.start,r.end,b);memDetail(key,space,r.owner+" · "+n+" grid bucket"+(n===1?"":"s"),[r])};list.appendChild(b);
     });
     if(!visible.length)list.innerHTML='<p class="mem-empty">No records match this filter.</p>';
     memDetail(key,space,key==="rom"?"Select a ROM bucket":"Select a physical RDRAM bucket",[]);
   }
-
-  cls.onchange=refresh;
-  q.oninput=refresh;
-  document.querySelector("#"+key+"-reset").onclick=()=>{cls.value="all";q.value="";refresh()};
+  cls.onchange=refresh;q.oninput=refresh;patchToggle.onchange=refresh;
+  document.querySelector("#"+key+"-reset").onclick=()=>{cls.value="all";q.value="";patchToggle.checked=true;refresh()};
   refresh();
 }
 memRender("rom");memRender("rdram");
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));t.classList.add("active");document.querySelector("#view-"+t.dataset.view).classList.add("active");history.replaceState(null,"","#"+t.dataset.view)});
-const initial=location.hash.replace("#","");if(["readiness","rom","rdram"].includes(initial)){const t=document.querySelector('.tab[data-view="'+initial+'"]');if(t)t.click()}
+const initial=location.hash.replace("#","");if(["readiness","features","stages","compat","rom","rdram"].includes(initial)){const t=document.querySelector('.tab[data-view="'+initial+'"]');if(t)t.click()}
 const memSource=document.createElement("p");memSource.className="mem-source";memSource.innerHTML='Memory-map snapshot: <code>'+window.MKMSZ_MEMORY_DATA.sourceCommit.slice(0,12)+'</code> · <a target="_blank" rel="noreferrer" href="https://github.com/smeagol44/MKMSZ-Randomizer/blob/main/wiki/Memory-and-Allocation-Map.md">canonical Memory and Allocation Map</a>. Unknown gaps are not classified as free.';document.querySelector("#view-rom .mem-intro").appendChild(memSource);document.querySelector("#view-rdram .mem-intro").appendChild(memSource.cloneNode(true));
+const projectSource=document.createElement("p");projectSource.className="mem-source";projectSource.innerHTML='Project snapshot: <code>'+projectData.sourceCommit.slice(0,12)+'</code> · canonical Project Status + 1.0 Roadmap + MKT owners.';document.querySelector("#view-features .card").appendChild(projectSource);document.querySelector("#view-compat .card").appendChild(projectSource.cloneNode(true));
+const stageSource=document.createElement("p");stageSource.className="mem-source";stageSource.innerHTML='Stage-catalog snapshot: <code>'+stageData.sourceCommit.slice(0,12)+'</code> · eight canonical Stage-Catalog-* owners.';document.querySelector("#view-stages .card").appendChild(stageSource);
+
 
 </script></body></html>
