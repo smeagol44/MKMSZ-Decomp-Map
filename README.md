@@ -1,10 +1,10 @@
-# MKMSZ Research Maps
+# MKMSZR Project Atlas
 
-Interactive reverse-engineering and project-status maps for **Mortal Kombat Mythologies: Sub-Zero (N64, USA Rev. 0 / NMYE)**, derived from the ongoing [MKMSZR](https://github.com/smeagol44/MKMSZ-Randomizer) project.
+Interactive project-status, stage, compatibility, decompilation, ROM, and RDRAM atlas for **Mortal Kombat Mythologies: Sub-Zero (N64, USA Rev. 0 / NMYE)**, derived from the ongoing [MKMSZR](https://github.com/smeagol44/MKMSZ-Randomizer) project.
 
 Public site:
 
-**https://smeagol44.github.io/MKMSZ-Decomp-Map/**
+**https://smeagol44.github.io/MKMSZR-Project-Atlas/**
 
 ## Views
 
