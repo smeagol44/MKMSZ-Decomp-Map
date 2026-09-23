@@ -92,7 +92,7 @@ const D={cols:40,rows:[
 ["Audio / music / SFX",2,8,30,[["g","Gameplay SFX wrapper","0x80064C18","Descriptor-table lookup and playback handoff are mapped."],["g","Raw sound playback entry","0x80080A88","Runtime sound-definition selection path is identified."],["y","Voice allocator","0x8007EC4C","Low-level sound-definition consumption is statically mapped."],["y","N64 ADPCM donor feasibility","sound banks","Compatible donor-audio work demonstrates meaningful understanding of the native family."],["b","Music sequencer","music engine","No comprehensive music-system reconstruction is documented."],["b","Sound-bank loader/editor","audio system","Only selected playback/bank paths are understood."]]],
 ["Bosses / camera / effects / misc",0,6,34,[["y","Boss exclusions / constructors","special encounters","Several bosses are identified as dedicated non-ordinary construction paths."],["y","Effects/render constructor candidate","0x8005EF5C","Correctly classified away from enemy loading, but not deeply reconstructed."],["y","Geometry/camera family","0x80064788","Known not to be the sought enemy loader; internal semantics remain limited."],["b","Boss AI and scripting","bosses","Per-boss systems are essentially separate reverse-engineering projects."],["b","Camera system","camera","No complete camera-control reconstruction."],["b","Particles / environmental FX","effects","Broadly unmapped."],["b","Misc engine services","engine","Large portions of the executable have not been studied at function-semantic depth."]]]
 ]};
-const src=[["Project Status","Project-Status.md"],["Memory & Allocation Map","Memory-and-Allocation-Map.md"],["Architecture Overview","Architecture-Overview.md"],["Function Registry","Function-Registry.md"],["Data Structures & Encodings","Data-Structures-and-Encodings.md"],["Native HUD & UI","Native-HUD-and-UI.md"],["Enemy Randomization","Enemy-Randomization.md"],["MKT Compatibility","MKT-to-MKMSZ-Compatibility-Layer.md"]];
+const src=[["Project Status","Project-Status.md"],["Memory & Allocation Map","Memory-and-Allocation-Map.md"],["Stage Catalogs","Stage-Catalogs.md"],["Architecture Overview","Architecture-Overview.md"],["Function Registry","Function-Registry.md"],["Data Structures & Encodings","Data-Structures-and-Encodings.md"],["Native HUD & UI","Native-HUD-and-UI.md"],["Palette & Recoloring","Palette-and-Recoloring.md"],["Enemy Randomization","Enemy-Randomization.md"],["MKT Compatibility","MKT-to-MKMSZ-Compatibility-Layer.md"]];
 src.forEach(([n,p])=>{const a=document.createElement("a");a.href="https://github.com/smeagol44/MKMSZ-Randomizer/blob/main/wiki/"+p;a.target="_blank";a.rel="noreferrer";a.textContent=n;document.querySelector("#sources").appendChild(a)});
 const totals=D.rows.reduce((a,r)=>(a.g+=r[1],a.y+=r[2],a.b+=r[3],a),{g:0,y:0,b:0});totals.a=totals.g+totals.y+totals.b;
 for(const [s,id] of [["g","g"],["y","y"],["b","b"]]){document.querySelector("#"+id+"c").textContent=totals[s]+" / "+totals.a;document.querySelector("#"+id+"p").textContent=Math.round(totals[s]/totals.a*100)+"%"}document.querySelector("#tc").textContent=totals.a;
@@ -265,11 +265,11 @@ function memRender(key){
     if(!patchToggle.checked)return;
     const hits=allPatches.filter(p=>{const r=patchRangeFor(key,p);return r[0]<e&&r[1]>s});
     hits.slice(0,6).forEach((p,lane)=>{
-      const r=patchRangeFor(key,p),pos=Math.max(s,Math.min(e-1,r[0])),m=document.createElement("button");
-      m.type="button";m.className="patch-mark "+(p.class==="production"?"prod":"proof");
+      const r=patchRangeFor(key,p),pos=Math.max(s,Math.min(e-1,r[0])),m=document.createElement("span");
+      m.setAttribute("role","button");m.tabIndex=0;m.className="patch-mark "+(p.class==="production"?"prod":"proof");
       m.style.left=Math.max(4,Math.min(31,4+((pos-s)/space.bucketSize)*30))+"px";m.style.top=(16+(lane%3)*9)+"px";
       m.title=(p.class==="production"?"Production":"Proof-only")+" patch · "+p.owner+" · "+p.romSite;
-      m.onclick=ev=>{ev.stopPropagation();const n=selectBuckets(r[0],r[1]);patchDetail(key,p,n)};
+      m.onclick=ev=>{ev.stopPropagation();const n=selectBuckets(r[0],r[1]);patchDetail(key,p,n)};m.onkeydown=ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();m.click()}};
       b.appendChild(m);
     });
   }
@@ -280,7 +280,8 @@ function memRender(key){
     cells.forEach(b=>{
       b.querySelectorAll(".mem-seg").forEach(x=>x.remove());
       const s=+b.dataset.start,e=+b.dataset.end,hits=visible.filter(r=>r.start<e&&r.end>s);
-      b.classList.toggle("dim",(cc!=="all"||qq)&&!hits.length);
+      const patchHits=patchToggle.checked?allPatches.filter(p=>{const pr=patchRangeFor(key,p);return pr[0]<e&&pr[1]>s}):[];
+      b.classList.toggle("dim",(cc!=="all"||qq)&&!hits.length&&!patchHits.length);
       hits.slice(0,5).forEach((r,lane)=>{
         const a=Math.max(s,r.start),z=Math.min(e,r.end),seg=document.createElement("i");
         seg.className="mem-seg "+(memClassInfo[r.class]?.css||"c-unknown");
