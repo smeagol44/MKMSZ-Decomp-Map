@@ -3,7 +3,7 @@
 window.MKMSZ_MEMORY_DATA = {
   "snapshot": "2026-09-23",
   "sourceRepo": "smeagol44/MKMSZ-Randomizer",
-  "sourceCommit": "58a0fdfaabfbe6be8c620bbb649709b50dae4772",
+  "sourceCommit": "3e1d0cae4a3a52989e8ef9b9c1290e1e01c81dfd",
   "sourcePage": "wiki/Memory-and-Allocation-Map.md",
   "rom": {
     "start": 0,
@@ -372,7 +372,7 @@ window.MKMSZ_MEMORY_DATA = {
         "lifecycle": "Artifact-specific",
         "evidence": "Runtime-confirmed bounded proof",
         "production_safe": "no",
-        "reference": "Memory and allocation map",
+        "reference": "Memory-and-Allocation-Map.md",
         "notes": "Architecture evidence only. The location is not a production allocation promise."
       },
       {
@@ -386,8 +386,22 @@ window.MKMSZ_MEMORY_DATA = {
         "lifecycle": "Artifact-specific",
         "evidence": "Runtime-confirmed bounded combo route",
         "production_safe": "no",
-        "reference": "Memory and allocation map",
+        "reference": "Memory-and-Allocation-Map.md",
         "notes": "Does not overlap current title allocation, but larger historical Sektor proof footprints crossed into the later title-owned high-ROM area; proof-history bounds remain artifact-specific."
+      },
+      {
+        "id": "rom.proof.rainbow_v01_file_87",
+        "start": 15859712,
+        "end": 16153056,
+        "range": "[0x00F20000, 0x00F679E0)",
+        "class": "proof-only",
+        "owner": "Rainbow outfit v01 relocated stock Sub-Zero file 0x87 plus 64-palette bank",
+        "scope": "Disposable proof",
+        "lifecycle": "Artifact-specific",
+        "evidence": "Runtime-confirmed full-production-composition proof",
+        "production_safe": "no",
+        "reference": "Memory-and-Allocation-Map.md",
+        "notes": "Artifact-specific relocation; the stock file body is preserved byte-for-byte before the appended palette bank. This does not reserve 0xF20000 for production."
       }
     ]
   },
@@ -756,6 +770,36 @@ window.MKMSZ_MEMORY_DATA = {
         "production_safe": "conditional",
         "reference": "addresses.py, pickup_persistence.py",
         "notes": "Corrects superseded 0x802FCE20; surrounding overlay/runtime space is not inferred from this word."
+      },
+      {
+        "id": "rdram.proof.rainbow_v01_code",
+        "start": 1766432,
+        "end": 1767376,
+        "range": "[0x1AF420, 0x1AF7D0)",
+        "aliases": "KSEG0 [0x801AF420,0x801AF7D0); KSEG1 [0xA01AF420,0xA01AF7D0)",
+        "class": "proof-only",
+        "owner": "Full-production rainbow proof code payload",
+        "scope": "Disposable proof / reserved-block repartition",
+        "lifecycle": "Artifact-specific full-composition proof",
+        "evidence": "Runtime-confirmed proof",
+        "production_safe": "no",
+        "reference": "Memory-and-Allocation-Map.md",
+        "notes": "Proof repartition expands code from the normal V2 0x300 bytes to 0x3B0; rainbow helper is at KSEG0 0x801AF700, size 0xCC."
+      },
+      {
+        "id": "rdram.proof.rainbow_v01_state",
+        "start": 1767376,
+        "end": 1767456,
+        "range": "[0x1AF7D0, 0x1AF820)",
+        "aliases": "KSEG0 [0x801AF7D0,0x801AF820); KSEG1 [0xA01AF7D0,0xA01AF820)",
+        "class": "proof-only",
+        "owner": "Full-production rainbow proof persistent state",
+        "scope": "Disposable proof / reserved-block repartition",
+        "lifecycle": "Artifact-specific full-composition proof",
+        "evidence": "Runtime-confirmed proof",
+        "production_safe": "no",
+        "reference": "Memory-and-Allocation-Map.md",
+        "notes": "Existing state semantics are repacked for this artifact; rainbow phase uses proof state offset +0x48."
       }
     ]
   }
