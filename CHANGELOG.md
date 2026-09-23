@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-23 — Rename to MKMSZR Project Atlas
+
+- Renamed the web experience from **MKMSZ Research Maps** to **MKMSZR Project Atlas**.
+- Updated the page title, hero branding, description, footer, and README identity.
+- Prepared the documented Pages URL for the repository rename to `MKMSZR-Project-Atlas`.
+
 ## 2026-09-23 — Project atlas expansion
 
 - Added the public-facing **Feature Board** for production, beta, proof, 1.0-needed, open, and post-1.0 research states.
