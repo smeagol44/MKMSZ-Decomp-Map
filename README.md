@@ -26,6 +26,7 @@ A literal 16 MiB cartridge-space view:
 - 16 × 16 grid;
 - 64 KiB per cell;
 - exact bounded intervals are overlaid proportionally inside each bucket;
+- clicking an exact interval highlights every coarse grid bucket it intersects and scrolls the selection into view;
 - unmapped remainder is explicitly **unknown / unclassified**, never assumed free.
 
 ### RDRAM Space
@@ -36,6 +37,7 @@ A literal 4 MiB physical-memory view:
 - 16 × 16 grid;
 - 16 KiB per cell;
 - proven KSEG0/KSEG1 aliases are shown in details;
+- clicking an exact interval highlights every physical grid bucket it intersects;
 - aliases are views of the same physical bytes and are never double-counted.
 
 The memory views preserve the canonical MKMSZR classifications: `stock-known`, `stock-unknown`, `production`, `confirmed-free`, `candidate-free`, `dynamic`, `proof-only`, `rejected/conflict`, and `alias/view`.

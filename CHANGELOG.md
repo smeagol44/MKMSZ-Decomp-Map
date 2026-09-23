@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-23 — Current research refresh and interval selection
+
+- Refreshed the memory snapshot from MKMSZR commit `3e1d0cae4a3a52989e8ef9b9c1290e1e01c81dfd`.
+- Added the Runtime-confirmed rainbow-outfit proof footprints: one proof-only ROM interval and two overlapping proof-only RDRAM composition intervals.
+- Reviewed the decomp-readiness map against the current Wiki; the 114 green / 156 yellow / 330 black totals remain conservative and unchanged.
+- Added the rainbow runtime palette-rebinding result as a concrete green fighter-graphics unit.
+- Updated the Toasty textured-UI unit for v15/v16 runtime findings and v17's pending corrected RGBA5551 palette validation.
+- Exact ROM/RDRAM interval-list clicks now select every intersecting coarse grid bucket, highlight the interval row, and scroll the selected blocks into view.
+
 ## 2026-09-23 — ROM/RDRAM space maps
 
 - Generalized the site into three tabs: Decomp Readiness, ROM Space, and RDRAM Space.
