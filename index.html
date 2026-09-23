@@ -23,8 +23,8 @@
 @media(max-width:430px){.mem-stats,.board-stats,.compat-stats,.stage-stats{grid-template-columns:1fr}}
 </style></head><body><main class="wrap">
 <header class="hero"><div><p class="ey">Mortal Kombat Mythologies: Sub-Zero · N64 USA Rev. 0</p><h1>MKMSZ Research Maps</h1><p class="lede">Interactive project, stage, compatibility, decompilation, and literal memory maps grounded in the current MKMSZR knowledge base.</p></div><div class="snap"><span>Readiness snapshot</span><strong>2026-09-23</strong></div></header>
-<nav class="tabs" aria-label="Research views"><button class="tab active" data-view="readiness">Decomp Readiness</button><button class="tab" data-view="features">Feature Board</button><button class="tab" data-view="stages">Stage Atlas</button><button class="tab" data-view="compat">MKT → MKMSZ</button><button class="tab" data-view="rom">ROM Space</button><button class="tab" data-view="rdram">RDRAM Space</button></nav>
-<section id="view-readiness" class="view active">
+<nav class="tabs" aria-label="Research views"><button class="tab active" data-view="features">Feature Board</button><button class="tab" data-view="stages">Stage Atlas</button><button class="tab" data-view="compat">MKT → MKMSZ</button><button class="tab" data-view="readiness">Decomp Readiness</button><button class="tab" data-view="rom">ROM Space</button><button class="tab" data-view="rdram">RDRAM Space</button></nav>
+<section id="view-readiness" class="view">
 <section class="card"><p><b>How to read this:</b> each square is one equal-sized <b>knowledge unit</b>, not one literal function or an equal number of ROM bytes. Green is stricter than “we can patch it”: it means the important data/control contract looks understood enough for a plausible C analogue.</p><div class="legend"><div class="li"><span class="sw g"></span><b>Green</b> — decomp-ready</div><div class="li"><span class="sw y"></span><b>Yellow</b> — partial</div><div class="li"><span class="sw b"></span><b>Black</b> — largely unknown</div></div></section>
 <section class="stats"><div class="stat sg"><span>Green</span><strong id="gc"></strong><small id="gp"></small></div><div class="stat sy"><span>Yellow</span><strong id="yc"></strong><small id="yp"></small></div><div class="stat"><span>Black</span><strong id="bc"></strong><small id="bp"></small></div><div class="stat"><span>Total</span><strong id="tc"></strong><small>knowledge units</small></div></section>
 <section class="toolbar"><label>Filter<select id="f"><option value="all">All statuses</option><option value="g">Green only</option><option value="y">Yellow only</option><option value="b">Black only</option></select></label><label>Search mapped units<input id="q" type="search" placeholder="inventory, Type-5, 0x80073E74"></label><button id="r">Reset</button></section>
@@ -34,7 +34,7 @@
 </section>
 
 
-<section id="view-features" class="view">
+<section id="view-features" class="view active">
 <section class="card"><p class="ey">What exists · what is required · what is still weird</p><h2>MKMSZR Feature Board</h2><p class="desc">A public-facing snapshot of the project's shipped systems, production betas, proof-only breakthroughs, 1.0 requirements, open questions, and post-1.0 research. This is intentionally catchier than the canonical Roadmap; the Wiki remains authoritative.</p><div class="mem-note">“Proof” means the idea worked in a bounded experiment, not that it ships. “Needed” means a current 1.0 release requirement. “Open” is deliberately unresolved rather than silently guessed.</div></section>
 <section id="feature-stats" class="board-stats"></section>
 <section class="board-toolbar"><label>State<select id="feature-state"></select></label><label>Intent<select id="feature-kind"></select></label><label>Search<input id="feature-q" type="search" placeholder="global items, HUD, Sektor, rainbow"></label><button id="feature-reset">Reset</button></section>
