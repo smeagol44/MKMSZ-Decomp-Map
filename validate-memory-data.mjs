@@ -41,8 +41,10 @@ for (const key of ["rom", "rdram"]) {
     if (!(record.start >= space.start && record.end <= space.end && record.start < record.end)) {
       throw new Error(record.id + ": interval is outside " + key + " bounds");
     }
-    if (record.range !== "[0x" + record.start.toString(16).toUpperCase().padStart(8, "0") +
-        ", 0x" + record.end.toString(16).toUpperCase().padStart(8, "0") + ")") {
+    const match = record.range.match(/^\[0x([0-9A-F]+), 0x([0-9A-F]+)\)$/i);
+    if (!match ||
+        Number.parseInt(match[1], 16) !== record.start ||
+        Number.parseInt(match[2], 16) !== record.end) {
       throw new Error(record.id + ": range text does not match numeric bounds");
     }
   }
