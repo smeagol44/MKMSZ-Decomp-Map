@@ -3,7 +3,7 @@
 window.MKMSZ_MEMORY_DATA = {
   "snapshot": "2026-09-25",
   "sourceRepo": "smeagol44/MKMSZ-Randomizer",
-  "sourceCommit": "740496d67cb52be18969c92b25eb117609b759fb",
+  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
   "sourcePage": "wiki/Memory-and-Allocation-Map.md",
   "rom": {
     "start": 0,
