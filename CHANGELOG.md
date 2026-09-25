@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-25 — Current MKMSZR refresh and memory-capacity redesign
+
+- Refreshed the Atlas source snapshot from MKMSZR commit `f506d6ecffe88750b18dc979a0d06c14f680ac78`.
+- Updated the Feature Board for the 16 KiB production reservation, production donor-backed presentation/audio integration, optional MKT donor browser/CLI flow, direction-facing proof, and Sektor straight-missile research through the statically rejected v85 ordinary-branch result.
+- Expanded the MKT → MKMSZ matrix with projectile actor ownership, launch placement, 60→30 Hz cadence translation, first-visible publication ordering, and remaining palette/effects/impact gaps.
+- Added current production ROM/RDRAM ownership for the conditional donor-backed module and audio sample, plus the full 15 KiB expansion-pool parent reservation.
+- Refreshed production patch-site coverage for the donor-backed trigger/init/HUD/file-entry sites and indexed the v85 proof seam.
+- Replaced the coarse ROM/RDRAM grid-first views with coverage/capacity dashboards:
+  - classified ownership vs unknown/unclassified bytes;
+  - MKMSZR production ownership/reservation;
+  - confirmed reusable free space;
+  - proof-only footprint totals kept separate;
+  - proportional whole-space bars;
+  - zoomed high-ROM and 16 KiB MKMSZR-reservation views;
+  - exact interval/patch-site browsers retained for provenance.
+- Explicitly separates **decompilation knowledge** from **byte ownership/capacity** so map coverage is not misread as code-understanding percentage.
+- Refreshed conservative Decomp Readiness cells for production textured HUD composition, donor voice translation, current projectile cadence evidence, Runtime V2 state, and the 16 KiB arena reservation.
+
 ## 2026-09-23 — Rename to MKMSZR Project Atlas
 
 - Renamed the web experience from **MKMSZ Research Maps** to **MKMSZR Project Atlas**.

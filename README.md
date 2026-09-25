@@ -53,29 +53,32 @@ It distinguishes:
 
 This is not a binary-compatibility claim.
 
-### ROM Space
+### ROM Coverage & Capacity
 
-A literal 16 MiB cartridge-space view:
+A capacity-first view of the literal 16 MiB cartridge image:
 
-- range: `0x00000000..0x01000000`;
-- 16 × 16 grid;
-- 64 KiB per cell;
-- exact bounded intervals overlaid proportionally inside each bucket;
-- clicking an exact interval highlights every coarse grid bucket it intersects;
-- optional **Patch-site overlay** sourced from the canonical patch registry;
-- unmapped remainder is explicitly **unknown / unclassified**, never assumed free.
+- classified bounded ownership vs unknown/unclassified bytes;
+- current MKMSZR production-owned bytes;
+- confirmed reusable free bytes;
+- proof-only footprints kept separate from current ownership;
+- a proportional whole-image strip plus a zoomed high-ROM generated-output strip;
+- exact interval and patch-site browser with canonical provenance.
 
-### RDRAM Space
+The view deliberately does **not** infer free space from `00`/`FF` patterns or from gaps in current research. Decompilation knowledge is shown separately in **Decomp Readiness**; byte ownership and code understanding are not the same metric.
 
-A literal 4 MiB physical-memory view:
+### RDRAM Coverage & Capacity
 
-- physical range: `0x000000..0x400000`;
-- 16 × 16 grid;
-- 16 KiB per cell;
-- proven KSEG0/KSEG1 aliases shown in details but never double-counted;
-- exact interval-list clicks highlight every intersecting physical bucket;
-- optional patch-site overlay for registry entries with an established KSEG0/RAM context;
-- unknown physical space remains unknown, not free.
+A physical-memory ownership/capacity view for the 4 MiB N64 target:
+
+- classified physical ownership vs unknown/unclassified bytes;
+- current MKMSZR production reservation/ownership;
+- confirmed reusable free bytes;
+- physical aliases counted once even when KSEG0/KSEG1 views exist;
+- a focused breakdown of the exact 16 KiB MKMSZR reservation;
+- current Runtime V2 fixed use, 15 KiB expansion-pool capacity, conditional donor-backed allocation, and reserved remainder shown separately;
+- exact physical interval and patch-site browser.
+
+Reserved-but-unused MKMSZR bytes are shown as reserved capacity, **not** as generic confirmed-free memory.
 
 ## Canonical authority
 
@@ -93,7 +96,7 @@ Primary inputs include:
 - `MKT-Fighter-Asset-Translation.md`
 - `Sub-Zero-to-Sektor-Animation-Mapping.md`
 
-The snapshot data files embed the source MKMSZR commit so a displayed state can be traced back to the source revision.
+The snapshot data files embed the source MKMSZR commit so a displayed state can be traced back to the source revision. The current refresh follows MKMSZR through the 16 KiB production reservation, production donor-backed presentation/audio integration, optional MKT donor web flow, direction-facing proof, and the straight-missile work through the statically rejected v85 ordinary-branch result.
 
 Important rules:
 

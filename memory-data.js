@@ -1,9 +1,9 @@
 // Generated from the canonical MKMSZR Memory-and-Allocation-Map.md snapshot.
 // Unknown gaps are intentionally not classified as free.
 window.MKMSZ_MEMORY_DATA = {
-  "snapshot": "2026-09-23",
+  "snapshot": "2026-09-25",
   "sourceRepo": "smeagol44/MKMSZ-Randomizer",
-  "sourceCommit": "7bcde1ac8d420587c109e6a7fceef6b2b4e2d97f",
+  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
   "sourcePage": "wiki/Memory-and-Allocation-Map.md",
   "rom": {
     "start": 0,
@@ -52,6 +52,48 @@ window.MKMSZ_MEMORY_DATA = {
         "production_safe": "yes",
         "reference": "native_payload.py, pickup_persistence.py, inventory_boxes.py, flow_bypass.py",
         "notes": "Conflicts with rejected title wrapper at 0x9ADE0 and Sektor v62 proof record [0x9AD90,0x9ADA0). Final four bytes are reserved capacity, not free."
+      },
+      {
+        "id": "rom.production.toasty_file_entry_1a",
+        "start": 676168,
+        "end": 676180,
+        "range": "[0x000A5148, 0x000A5154)",
+        "class": "production",
+        "owner": "Conditional donor-feature file-table entry 0x1A",
+        "scope": "Global file table",
+        "lifecycle": "Stage init when donor-backed feature is present",
+        "evidence": "Runtime-confirmed in v47 production composition; CI guards/bounds",
+        "production_safe": "conditional",
+        "reference": "toasty.py; Address-and-Patch-Site-Registry.md",
+        "notes": "Owned only when donor-derived assets are supplied. Normal builds leave the clean zero entry untouched."
+      },
+      {
+        "id": "rom.production.toasty_module",
+        "start": 16154624,
+        "end": 16167712,
+        "range": "[0x00F68000, 0x00F6B320)",
+        "class": "production",
+        "owner": "Packed donor-backed presentation module",
+        "scope": "Generated ROM output",
+        "lifecycle": "Stage init / gameplay when optional donor is supplied",
+        "evidence": "Runtime-confirmed in v47 full production composition",
+        "production_safe": "conditional",
+        "reference": "toasty.py; toasty_codegen.py",
+        "notes": "Code, TLUT, tables/state and nine CI8 slices. Starts after optional rainbow ownership and stays below title ownership."
+      },
+      {
+        "id": "rom.production.toasty_audio_sample",
+        "start": 16167712,
+        "end": 16169782,
+        "range": "[0x00F6B320, 0x00F6BB36)",
+        "class": "production",
+        "owner": "Donor-backed encoded audio sample",
+        "scope": "Generated ROM output",
+        "lifecycle": "Gameplay audio when optional donor is supplied",
+        "evidence": "Runtime-confirmed in v47 full production composition",
+        "production_safe": "conditional",
+        "reference": "toasty.py; Toasty-Audio-Research.md",
+        "notes": "Donor bytes are extracted locally from the user's supported MKT ROM and are not stored in the repository."
       },
       {
         "id": "rom.stock.false_zero_cave",
@@ -785,6 +827,51 @@ window.MKMSZ_MEMORY_DATA = {
         "production_safe": "yes",
         "reference": "runtime_v2.py owns full state [0x1AF7D0,0x1AF820)",
         "notes": "Reserved, not free."
+      },
+      {
+        "id": "rdram.production.expansion_pool",
+        "start": 1767456,
+        "end": 1782816,
+        "range": "[0x1AF820, 0x1B3420)",
+        "aliases": "KSEG0 [0x801AF820,0x801B3420); KSEG1 [0xA01AF820,0xA01B3420)",
+        "class": "production",
+        "owner": "MKMSZR 15 KiB expansion-pool reservation",
+        "scope": "Reserved MKMSZR block",
+        "lifecycle": "Global reservation; feature slices assigned at build time",
+        "evidence": "16 KiB arena-floor proof Runtime-confirmed across all eight safe stages; allocator/bounds CI-confirmed",
+        "production_safe": "yes",
+        "reference": "allocations.py; tests/test_expansion_allocations.py",
+        "notes": "Parent reservation, not free space. Child allocations may live inside it; unused capacity remains reserved for MKMSZR."
+      },
+      {
+        "id": "rdram.production.toasty_module",
+        "start": 1769472,
+        "end": 1782560,
+        "range": "[0x1B0000, 0x1B3320)",
+        "aliases": "KSEG0 [0x801B0000,0x801B3320); KSEG1 [0xA01B0000,0xA01B3320)",
+        "class": "production",
+        "owner": "Conditional donor-backed native module",
+        "scope": "MKMSZR expansion pool",
+        "lifecycle": "Stage init / gameplay when optional donor is supplied",
+        "evidence": "Runtime-confirmed in v47 full production composition; CI bounds",
+        "production_safe": "conditional",
+        "reference": "toasty_codegen.py; tests/test_toasty.py",
+        "notes": "Uses 0x3320 bytes at the 0x801B0000-aligned slice. In that composition only 0x100 bytes remain after the module; the preceding alignment gap stays reserved, not free."
+      },
+      {
+        "id": "rdram.proof.toasty_v43_feature",
+        "start": 1767456,
+        "end": 1769376,
+        "range": "[0x1AF820, 0x1AFFA0)",
+        "aliases": "KSEG0 [0x801AF820,0x801AFFA0); KSEG1 [0xA01AF820,0xA01AFFA0)",
+        "class": "proof-only",
+        "owner": "Toasty v43 loaded feature slice",
+        "scope": "Disposable proof",
+        "lifecycle": "Stage init / gameplay",
+        "evidence": "v42 presentation runtime-confirmed; v43 trigger wrapper static-confirmed",
+        "production_safe": "no",
+        "reference": "Toasty-Visual-Research.md",
+        "notes": "Historical proof suballocation inside the now-production expansion pool. It does not establish reusable space."
       },
       {
         "id": "rdram.stock.pickup_context_pointer",

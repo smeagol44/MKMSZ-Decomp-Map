@@ -1,7 +1,7 @@
 // Curated public-facing snapshot from current canonical MKMSZR owners.
 window.MKMSZ_PROJECT_DATA = {
-  "snapshot": "2026-09-23",
-  "sourceCommit": "7bcde1ac8d420587c109e6a7fceef6b2b4e2d97f",
+  "snapshot": "2026-09-25",
+  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
   "featureBoard": [
     {
       "group": "Core",
@@ -16,7 +16,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "Native Runtime V2",
       "state": "production",
       "kind": "have",
-      "detail": "The 1 KiB MKMSZR RDRAM reservation and native payload load/execute path are runtime-confirmed.",
+      "detail": "The production arena floor now reserves 16 KiB for MKMSZR. Runtime V2 owns the first 1 KiB and a bounded build-time expansion pool owns the remaining 15 KiB; the reservation is runtime-confirmed across all eight safe stages.",
       "source": "Project-Status.md"
     },
     {
@@ -96,7 +96,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "Browser / CLI shared patch core",
       "state": "beta",
       "kind": "have",
-      "detail": "Both product surfaces use the same guarded patch core.",
+      "detail": "Browser and CLI share one guarded patch core. The web now makes the N64 patch target explicit, treats MKT Rev. 2 as an optional donor, derives supported donor-backed assets locally, and labels PlayStation as a future ISO target rather than requesting unused files.",
       "source": "Project-Status.md"
     },
     {
@@ -216,23 +216,31 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "MKT / Sektor takeover",
       "state": "proof",
       "kind": "future",
-      "detail": "Broad Sektor animation and combo behavior is runtime-proven, but the takeover remains proof-only and has unresolved integration gaps.",
+      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. Straight-missile work has a stable v75 flight baseline and v84 first-visible evidence, but current static reconciliation rejects v85 on the ordinary straight branch: its global insertion suppression has no reachable reinsertion there. Palette selector ownership, parent/child frame scheduling, helpers, effects/audio and production-safe composition remain unresolved.",
+      "source": "Project-Status.md"
+    },
+    {
+      "group": "Presentation",
+      "name": "Donor-backed Toasty audio",
+      "state": "production",
+      "kind": "have",
+      "detail": "The genuine donor voice is production-composed through a dedicated MKMSZ audio route while stock pickup audio remains unchanged. v47 is runtime-confirmed in the full production composition.",
+      "source": "Project-Status.md"
+    },
+    {
+      "group": "Presentation",
+      "name": "Donor-backed Toasty visual",
+      "state": "production",
+      "kind": "have",
+      "detail": "The final 78x85 lower-right presentation, successful-reaction trigger family, donor asset extraction, and production allocation are integrated. v47 is runtime-confirmed in the full production composition; product tuning is 8%.",
       "source": "Project-Status.md"
     },
     {
       "group": "Research",
-      "name": "Toasty audio",
+      "name": "Direction-facing controls",
       "state": "proof",
       "kind": "future",
-      "detail": "The accepted MKT Toasty voice plays through MKMSZ's native audio path; final product trigger/composition is pending.",
-      "source": "Project-Status.md"
-    },
-    {
-      "group": "Research",
-      "name": "Toasty visual",
-      "state": "partial",
-      "kind": "future",
-      "detail": "CI8 image rendering and custom palette selection are runtime-confirmed; correctly colored final palette output still needs the latest runtime gate.",
+      "detail": "A bounded v02 proof makes opposite horizontal input face into stock forward locomotion while held Turn preserves backward walking/facing lock. The proof is runtime-confirmed but remains outside 1.0 and outside production.",
       "source": "Project-Status.md"
     },
     {
@@ -240,7 +248,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "Generic donor-move adapter",
       "state": "partial",
       "kind": "future",
-      "detail": "Useful MKMSZ host primitives and donor semantics are mapped, but generic translation and production composition remain incomplete.",
+      "detail": "The adapter now has concrete projectile creation/placement, cadence-resampling, animation-context and first-visibility evidence from the Sektor missile line. Generic strike/reaction, effects/audio/palette lifetime and production composition remain incomplete.",
       "source": "Project-Status.md"
     }
   ],
@@ -415,6 +423,51 @@ window.MKMSZ_PROJECT_DATA = {
       "status": "runtime",
       "detail": "Broad common-action coverage, Run v58, Combo v59, and v62 combo behavior are runtime-confirmed.",
       "source": "Sub-Zero-to-Sektor-Animation-Mapping.md"
+    },
+    {
+      "area": "Projectiles",
+      "capability": "Projectile actor creation / ownership",
+      "donor": "setup_proj_obj + create_proj_proc",
+      "target": "Resource actor + secondary projectile actor/process path",
+      "status": "partial",
+      "detail": "Target actor/process ownership is statically reconciled and repeatedly exercised by the straight-missile proofs; a generic wrapper is still pending.",
+      "source": "MKT-Adapter-Primitives.md"
+    },
+    {
+      "area": "Projectiles",
+      "capability": "Facing-aware launch placement",
+      "donor": "retail (+5,+38)",
+      "target": "Native local placement",
+      "status": "runtime",
+      "detail": "v72 runtime-confirms the retail N64 launch offset near the owner and correct facing mirroring.",
+      "source": "MKT-Adapter-Primitives.md"
+    },
+    {
+      "area": "Projectiles",
+      "capability": "60 Hz donor → 30 Hz host flight cadence",
+      "donor": "rocket1_flight_call velocity state",
+      "target": "Two donor substeps folded into one target interval",
+      "status": "runtime",
+      "detail": "v74 runtime-confirms the folded cadence is stable; v75 provides a bounded 2x magnitude calibration that feels correct on the tested route, not a universal scale.",
+      "source": "MKT-Adapter-Primitives.md"
+    },
+    {
+      "area": "Projectiles",
+      "capability": "First-visible projectile publication",
+      "donor": "rocket frame becomes visible after setup",
+      "target": "Frame bind + active-list insertion ordering",
+      "status": "partial",
+      "detail": "v84 proves contextual pre-insertion binding can remove the fallback frame but uses the wrong fixed palette selector and still corrupts the rocket. v85's deferred-publication attempt is statically rejected on ordinary mode-zero flight because the only reinsertion wrapper is bypassed.",
+      "source": "MKT-Adapter-Primitives.md"
+    },
+    {
+      "area": "Projectiles",
+      "capability": "Projectile palette / effects / impact lifecycle",
+      "donor": "rocket palette, smoke, sound, explosion, strike semantics",
+      "target": "Native palette/audio/effect/strike translations",
+      "status": "missing",
+      "detail": "These remain distinct translation tasks; the straight-missile line has not established a production-ready generic implementation.",
+      "source": "MKT-Adapter-Primitives.md"
     },
     {
       "area": "Fighter",
