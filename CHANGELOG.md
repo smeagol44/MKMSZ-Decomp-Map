@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-09-25 — Production GAME SETTINGS / TURN refresh
+
+- Advanced the Atlas snapshot to MKMSZR commit `9e0b39af06fb850ba130dd88ed081711f86b18f7`.
+- Promoted direction-facing from a proof-only future item to **Production beta** as native `GAME SETTINGS -> TURN: TOGGLE / LOCK`.
+- Added a dedicated Feature Board card for the native GAME SETTINGS menu and a production card for TURN controls.
+- Recorded the runtime-confirmed production scope: TOGGLE vanilla default, LOCK world-direction/facing-lock behavior, held-Turn backpedal, bounded forced-facing fallback, inventory-box coexistence, and stage-transition validation; Earth boss type `0x19` remains outside the runtime claim.
+- Updated ROM/RDRAM ownership for the mandatory `0x404`-byte TURN module, shared file-`0x1A` transport, shifted optional donor module/audio ranges, transient editor state at `0xA01AF81C`, and the durable TURN preference owner.
+- Updated patch-site overlays for the TURN action gate, direction decision, release path, GAME SETTINGS wrapper, and shared file-`0x1A` entry.
+- Updated the RDRAM capacity dashboard so its “currently allocated” figure includes both mandatory TURN and optional donor-backed allocations.
+- Refreshed conservative Decomp Readiness for the now-understood native settings reuse and production facing-lock/action boundary.
+- Re-checked concurrent Sektor work: Atlas now reflects v89 as Implementation/static-confirmed and Runtime Pending, plus the accepted six-pose Run policy.
+
 ## 2026-09-25 — Current MKMSZR refresh and memory-capacity redesign
 
 - Refreshed the Atlas source snapshot from MKMSZR commit `f506d6ecffe88750b18dc979a0d06c14f680ac78`.
