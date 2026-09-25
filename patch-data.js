@@ -1,7 +1,7 @@
 // Patch-site overlay snapshot from the canonical MKMSZR registry.
 window.MKMSZ_PATCH_DATA = {
   "snapshot": "2026-09-25",
-  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
+  "sourceCommit": "9e0b39af06fb850ba130dd88ed081711f86b18f7",
   "patches": [
     {
       "id": "prod-0",
@@ -582,6 +582,74 @@ window.MKMSZ_PATCH_DATA = {
       "source": "Address-and-Patch-Site-Registry.md"
     },
     {
+      "id": "prod-turn-action",
+      "class": "production",
+      "owner": "TURN action gate",
+      "romSite": "0x00016354",
+      "romStart": 90964,
+      "romEnd": 90972,
+      "romExact": true,
+      "context": "0x80015754",
+      "vaStart": 2147571540,
+      "vaEnd": 2147571548,
+      "physicalStart": 87892,
+      "physicalEnd": 87900,
+      "expected": "A62406DC 3C058003",
+      "effect": "Jump to guarded v10/v06 action helper; suppress Turn states 23/24 only when effective LOCK is active",
+      "source": "Address-and-Patch-Site-Registry.md"
+    },
+    {
+      "id": "prod-turn-decision",
+      "class": "production",
+      "owner": "TURN direction decision",
+      "romSite": "0x00029FB0",
+      "romStart": 171952,
+      "romEnd": 171960,
+      "romExact": true,
+      "context": "0x800293B0",
+      "vaStart": 2147652528,
+      "vaEnd": 2147652536,
+      "physicalStart": 168880,
+      "physicalEnd": 168888,
+      "expected": "8C640704 24020305",
+      "effect": "JAL production TURN decision helper; TOGGLE stays stock, LOCK uses accepted v10 facing correction",
+      "source": "Address-and-Patch-Site-Registry.md"
+    },
+    {
+      "id": "prod-turn-release",
+      "class": "production",
+      "owner": "TURN release path",
+      "romSite": "0x0002A0DC",
+      "romStart": 172252,
+      "romEnd": 172260,
+      "romExact": true,
+      "context": "0x800294DC",
+      "vaStart": 2147652828,
+      "vaEnd": 2147652836,
+      "physicalStart": 169180,
+      "physicalEnd": 169188,
+      "expected": "8C820638 94430000",
+      "effect": "JAL leaf-only v06 release helper with bounded direct forced-facing scan",
+      "source": "Address-and-Patch-Site-Registry.md"
+    },
+    {
+      "id": "prod-turn-menu",
+      "class": "production",
+      "owner": "GAME SETTINGS TURN menu wrapper",
+      "romSite": "0x000770B8",
+      "romStart": 487608,
+      "romEnd": 487616,
+      "romExact": true,
+      "context": "frontend OPTIONS -> GAME SETTINGS call",
+      "vaStart": null,
+      "vaEnd": null,
+      "physicalStart": null,
+      "physicalEnd": null,
+      "expected": "0C01D9AF 02402021",
+      "effect": "JAL frontend-resident wrapper; mirror durable TURN preference into stock editor and commit it on return",
+      "source": "Address-and-Patch-Site-Registry.md"
+    },
+    {
       "id": "prod-toasty-trigger",
       "class": "production",
       "owner": "Donor-backed reaction trigger",
@@ -633,9 +701,9 @@ window.MKMSZ_PATCH_DATA = {
       "source": "Address-and-Patch-Site-Registry.md"
     },
     {
-      "id": "prod-toasty-file1a",
+      "id": "prod-shared-file1a",
       "class": "production",
-      "owner": "Optional donor transport",
+      "owner": "Shared TURN / optional donor transport",
       "romSite": "0x000A5148",
       "romStart": 676168,
       "romEnd": 676180,
@@ -646,7 +714,7 @@ window.MKMSZ_PATCH_DATA = {
       "physicalStart": null,
       "physicalEnd": null,
       "expected": "guarded clean zero entry",
-      "effect": "Conditionally point file 0x1A at the packed high-ROM module",
+      "effect": "Always points at the TURN shared prefix; optional donor-backed content extends the same file",
       "source": "Address-and-Patch-Site-Registry.md"
     },
     {

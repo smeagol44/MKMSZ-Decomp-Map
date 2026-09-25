@@ -64,9 +64,12 @@ for (const row of project.compatibility) {
 }
 
 const requiredCurrentRecords = [
+  ["rom", "rom.production.shared_file_entry_1a"],
+  ["rom", "rom.production.turn_shared_prefix"],
   ["rom", "rom.production.toasty_module"],
   ["rom", "rom.production.toasty_audio_sample"],
   ["rdram", "rdram.production.expansion_pool"],
+  ["rdram", "rdram.production.turn_module"],
   ["rdram", "rdram.production.toasty_module"],
 ];
 for (const [spaceName, id] of requiredCurrentRecords) {
@@ -74,7 +77,7 @@ for (const [spaceName, id] of requiredCurrentRecords) {
     throw new Error("missing current memory record: " + id);
   }
 }
-for (const id of ["prod-toasty-trigger", "prod-toasty-init", "prod-toasty-hud", "prod-toasty-file1a", "proof-sektor-v85"]) {
+for (const id of ["prod-turn-action", "prod-turn-decision", "prod-turn-release", "prod-turn-menu", "prod-shared-file1a", "prod-toasty-trigger", "prod-toasty-init", "prod-toasty-hud", "proof-sektor-v85"]) {
   if (!patches.patches.some(patch => patch.id === id)) {
     throw new Error("missing current patch record: " + id);
   }

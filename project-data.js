@@ -1,7 +1,7 @@
 // Curated public-facing snapshot from current canonical MKMSZR owners.
 window.MKMSZ_PROJECT_DATA = {
   "snapshot": "2026-09-25",
-  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
+  "sourceCommit": "9e0b39af06fb850ba130dd88ed081711f86b18f7",
   "featureBoard": [
     {
       "group": "Core",
@@ -61,6 +61,22 @@ window.MKMSZ_PROJECT_DATA = {
     },
     {
       "group": "UI",
+      "name": "Native GAME SETTINGS menu",
+      "state": "beta",
+      "kind": "have",
+      "detail": "The shared patcher now reuses the stock GAME SETTINGS frontend as a native MKMSZR settings page. TURN: TOGGLE / LOCK plus EXIT is Runtime-confirmed in the full production composition; the accepted wrapper stays frontend-resident and never raw-loads gameplay expansion code from the title lifecycle.",
+      "source": "Project-Status.md"
+    },
+    {
+      "group": "Controls",
+      "name": "TURN: TOGGLE / LOCK",
+      "state": "beta",
+      "kind": "have",
+      "detail": "Every generated ROM now includes TURN controls. TOGGLE is the vanilla default; LOCK uses the accepted v10 world-direction/facing-lock model, preserves held-Turn backpedal, and temporarily defers to stock forced-facing policy without changing the saved preference. Earth boss type 0x19 remains outside the runtime claim.",
+      "source": "Project-Status.md"
+    },
+    {
+      "group": "UI",
       "name": "Native box indicator",
       "state": "production",
       "kind": "have",
@@ -96,7 +112,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "Browser / CLI shared patch core",
       "state": "beta",
       "kind": "have",
-      "detail": "Browser and CLI share one guarded patch core. The web now makes the N64 patch target explicit, treats MKT Rev. 2 as an optional donor, derives supported donor-backed assets locally, and labels PlayStation as a future ISO target rather than requesting unused files.",
+      "detail": "Browser and CLI share one guarded patch core. Every generated ROM includes the native GAME SETTINGS TURN option; the web keeps MKMSZ N64 as the explicit patch target, MKT Rev. 2 as an optional donor, and PlayStation as a future ISO target.",
       "source": "Project-Status.md"
     },
     {
@@ -216,7 +232,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "MKT / Sektor takeover",
       "state": "proof",
       "kind": "future",
-      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. Straight-missile work has a stable v75 flight baseline and v84 first-visible evidence, but current static reconciliation rejects v85 on the ordinary straight branch: its global insertion suppression has no reachable reinsertion there. Palette selector ownership, parent/child frame scheduling, helpers, effects/audio and production-safe composition remain unresolved.",
+      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. v75 is the stable missile-flight baseline; v87 Runtime-confirms donor-faithful flying-rocket colors. v88 still shows one stale pre-rocket texture frame, which separates descriptor binding from asynchronous texture-slot publication. v89 tests synchronous pre-publication texture preparation and is Implementation/static-confirmed, Runtime Pending. The accepted six-pose Run policy is also Runtime-confirmed; its physical repack is static-confirmed and pending regression.",
       "source": "Project-Status.md"
     },
     {
@@ -233,14 +249,6 @@ window.MKMSZ_PROJECT_DATA = {
       "state": "production",
       "kind": "have",
       "detail": "The final 78x85 lower-right presentation, successful-reaction trigger family, donor asset extraction, and production allocation are integrated. v47 is runtime-confirmed in the full production composition; product tuning is 8%.",
-      "source": "Project-Status.md"
-    },
-    {
-      "group": "Research",
-      "name": "Direction-facing controls",
-      "state": "proof",
-      "kind": "future",
-      "detail": "A bounded v02 proof makes opposite horizontal input face into stock forward locomotion while held Turn preserves backward walking/facing lock. The proof is runtime-confirmed but remains outside 1.0 and outside production.",
       "source": "Project-Status.md"
     },
     {
@@ -457,7 +465,7 @@ window.MKMSZ_PROJECT_DATA = {
       "donor": "rocket frame becomes visible after setup",
       "target": "Frame bind + active-list insertion ordering",
       "status": "partial",
-      "detail": "v84 proves contextual pre-insertion binding can remove the fallback frame but uses the wrong fixed palette selector and still corrupts the rocket. v85's deferred-publication attempt is statically rejected on ordinary mode-zero flight because the only reinsertion wrapper is bypassed.",
+      "detail": "v87 establishes the correct retail rocket asset/palette pair, but v88 proves descriptor advance alone does not synchronously publish the new texture. Current static tracing identifies the dirty-slot/upload path and v89 tests native synchronous preparation before stock list insertion; runtime validation is pending.",
       "source": "MKT-Adapter-Primitives.md"
     },
     {
@@ -466,7 +474,7 @@ window.MKMSZ_PROJECT_DATA = {
       "donor": "rocket palette, smoke, sound, explosion, strike semantics",
       "target": "Native palette/audio/effect/strike translations",
       "status": "missing",
-      "detail": "These remain distinct translation tasks; the straight-missile line has not established a production-ready generic implementation.",
+      "detail": "Palette translation is now materially stronger through v86/v87, but balanced palette release, smoke/sound/explosion, strike semantics, and production-safe generic integration remain distinct pending tasks.",
       "source": "MKT-Adapter-Primitives.md"
     },
     {
