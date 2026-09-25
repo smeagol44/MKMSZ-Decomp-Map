@@ -2,8 +2,8 @@
 
 ## 2026-09-25 — Current MKMSZR refresh and memory-capacity redesign
 
-- Refreshed the Atlas source snapshot from MKMSZR commit `740496d67cb52be18969c92b25eb117609b759fb`.
-- Updated the Feature Board for the 16 KiB production reservation, production donor-backed presentation/audio integration, optional MKT donor browser/CLI flow, direction-facing proof, and Sektor straight-missile research through v85 Pending.
+- Refreshed the Atlas source snapshot from MKMSZR commit `f506d6ecffe88750b18dc979a0d06c14f680ac78`.
+- Updated the Feature Board for the 16 KiB production reservation, production donor-backed presentation/audio integration, optional MKT donor browser/CLI flow, direction-facing proof, and Sektor straight-missile research through the statically rejected v85 ordinary-branch result.
 - Expanded the MKT → MKMSZ matrix with projectile actor ownership, launch placement, 60→30 Hz cadence translation, first-visible publication ordering, and remaining palette/effects/impact gaps.
 - Added current production ROM/RDRAM ownership for the conditional donor-backed module and audio sample, plus the full 15 KiB expansion-pool parent reservation.
 - Refreshed production patch-site coverage for the donor-backed trigger/init/HUD/file-entry sites and indexed the v85 proof seam.
