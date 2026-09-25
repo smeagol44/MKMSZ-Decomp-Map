@@ -232,7 +232,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "MKT / Sektor takeover",
       "state": "proof",
       "kind": "future",
-      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. v75 is the stable missile-flight baseline; v86 proves projectile-local dynamic palette ownership matters; v87 Runtime-confirms donor-faithful flying-rocket colors using exact retail ROCKETD1 indices + ROCKET_P. v88 composes that palette result with v84's first-visible contextual rocket advance and is Runtime Pending. Helpers, strike/effects/audio, balanced palette release and production-safe composition remain unresolved.",
+      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. v75 is the stable missile-flight baseline; v87 Runtime-confirms donor-faithful flying-rocket colors. v88 still shows one stale pre-rocket texture frame, which separates descriptor binding from asynchronous texture-slot publication. v89 tests synchronous pre-publication texture preparation and is Implementation/static-confirmed, Runtime Pending. The accepted six-pose Run policy is also Runtime-confirmed; its physical repack is static-confirmed and pending regression.",
       "source": "Project-Status.md"
     },
     {
@@ -465,7 +465,7 @@ window.MKMSZ_PROJECT_DATA = {
       "donor": "rocket frame becomes visible after setup",
       "target": "Frame bind + active-list insertion ordering",
       "status": "partial",
-      "detail": "v84 proves contextual pre-insertion binding can remove the first Ice-derived frame. v86 proves the projectile-local dynamic palette source matters, and v87 Runtime-confirms the exact retail ROCKETD1 + ROCKET_P colors for the flying missile. v88 combines v84's first-visible advance with v87's correct palette and is Runtime Pending.",
+      "detail": "v87 establishes the correct retail rocket asset/palette pair, but v88 proves descriptor advance alone does not synchronously publish the new texture. Current static tracing identifies the dirty-slot/upload path and v89 tests native synchronous preparation before stock list insertion; runtime validation is pending.",
       "source": "MKT-Adapter-Primitives.md"
     },
     {
