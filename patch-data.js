@@ -1,7 +1,7 @@
 // Patch-site overlay snapshot from the canonical MKMSZR registry.
 window.MKMSZ_PATCH_DATA = {
   "snapshot": "2026-09-25",
-  "sourceCommit": "740496d67cb52be18969c92b25eb117609b759fb",
+  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
   "patches": [
     {
       "id": "prod-0",
@@ -663,7 +663,7 @@ window.MKMSZ_PATCH_DATA = {
       "physicalStart": 199368,
       "physicalEnd": 199372,
       "expected": "exact-v75 token JAL 0x80024650",
-      "effect": "Runtime Pending: defer active-list insertion until after the known-good v75 Ice→rocket transition",
+      "effect": "Built but statically rejected on ordinary straight flight: global insertion suppression has no reachable reinsertion on the normal mode-zero branch",
       "source": "Address-and-Patch-Site-Registry.md"
     },
     {
