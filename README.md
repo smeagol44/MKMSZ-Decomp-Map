@@ -96,7 +96,7 @@ Primary inputs include:
 - `MKT-Fighter-Asset-Translation.md`
 - `Sub-Zero-to-Sektor-Animation-Mapping.md`
 
-The snapshot data files embed the source MKMSZR commit so a displayed state can be traced back to the source revision. The current refresh follows MKMSZR through the 16 KiB production reservation, production donor-backed presentation/audio integration, optional MKT donor web flow, direction-facing proof, and the straight-missile work through the statically rejected v85 ordinary-branch result.
+The snapshot data files embed the source MKMSZR commit so a displayed state can be traced back to the source revision. The current refresh follows MKMSZR through the 16 KiB production reservation, native GAME SETTINGS -> TURN: TOGGLE / LOCK production integration, shared TURN/optional-donor file-0x1A composition, optional MKT donor web flow, production donor-backed presentation/audio, and the current Sektor line through v89 Pending plus the accepted six-pose Run policy.
 
 Important rules:
 
