@@ -1,7 +1,7 @@
 // Patch-site overlay snapshot from the canonical MKMSZR registry.
 window.MKMSZ_PATCH_DATA = {
-  "snapshot": "2026-09-23",
-  "sourceCommit": "7bcde1ac8d420587c109e6a7fceef6b2b4e2d97f",
+  "snapshot": "2026-09-25",
+  "sourceCommit": "740496d67cb52be18969c92b25eb117609b759fb",
   "patches": [
     {
       "id": "prod-0",
