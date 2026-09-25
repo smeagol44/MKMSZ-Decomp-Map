@@ -1,7 +1,7 @@
 // Curated public-facing snapshot from current canonical MKMSZR owners.
 window.MKMSZ_PROJECT_DATA = {
   "snapshot": "2026-09-25",
-  "sourceCommit": "740496d67cb52be18969c92b25eb117609b759fb",
+  "sourceCommit": "f506d6ecffe88750b18dc979a0d06c14f680ac78",
   "featureBoard": [
     {
       "group": "Core",
@@ -216,7 +216,7 @@ window.MKMSZ_PROJECT_DATA = {
       "name": "MKT / Sektor takeover",
       "state": "proof",
       "kind": "future",
-      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. Straight-missile work now has a stable v75 flight baseline, v84 first-visible ownership evidence, and a v85 deferred-publication candidate; palette/resource presentation and production-safe composition remain unresolved.",
+      "detail": "Broad Sektor animation/combo behavior remains runtime-proven. Straight-missile work has a stable v75 flight baseline and v84 first-visible evidence, but current static reconciliation rejects v85 on the ordinary straight branch: its global insertion suppression has no reachable reinsertion there. Palette selector ownership, parent/child frame scheduling, helpers, effects/audio and production-safe composition remain unresolved.",
       "source": "Project-Status.md"
     },
     {
@@ -457,7 +457,7 @@ window.MKMSZ_PROJECT_DATA = {
       "donor": "rocket frame becomes visible after setup",
       "target": "Frame bind + active-list insertion ordering",
       "status": "partial",
-      "detail": "v84 proves contextual pre-insertion binding can remove the fallback frame but corrupts the rocket. v85 instead defers list insertion until after the known-good v75 Ice→rocket transition; runtime validation is pending.",
+      "detail": "v84 proves contextual pre-insertion binding can remove the fallback frame but uses the wrong fixed palette selector and still corrupts the rocket. v85's deferred-publication attempt is statically rejected on ordinary mode-zero flight because the only reinsertion wrapper is bypassed.",
       "source": "MKT-Adapter-Primitives.md"
     },
     {
