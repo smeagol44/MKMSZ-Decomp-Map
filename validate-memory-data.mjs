@@ -63,6 +63,31 @@ for (const row of project.compatibility) {
   if (!compatStates.has(row.status)) throw new Error("compatibility status: " + row.capability);
 }
 
+const requiredCurrentRecords = [
+  ["rom", "rom.production.toasty_module"],
+  ["rom", "rom.production.toasty_audio_sample"],
+  ["rdram", "rdram.production.expansion_pool"],
+  ["rdram", "rdram.production.toasty_module"],
+];
+for (const [spaceName, id] of requiredCurrentRecords) {
+  if (!memory[spaceName].records.some(record => record.id === id)) {
+    throw new Error("missing current memory record: " + id);
+  }
+}
+for (const id of ["prod-toasty-trigger", "prod-toasty-init", "prod-toasty-hud", "prod-toasty-file1a", "proof-sektor-v85"]) {
+  if (!patches.patches.some(patch => patch.id === id)) {
+    throw new Error("missing current patch record: " + id);
+  }
+}
+
+const html = fs.readFileSync("index.html", "utf8");
+const inlineScripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
+  .map(match => match[1])
+  .filter(script => script.trim());
+for (const [index, script] of inlineScripts.entries()) {
+  new vm.Script(script, { filename: "index-inline-" + index + ".js" });
+}
+
 for (const patch of patches.patches) {
   if (!["production", "proof-only"].includes(patch.class)) throw new Error("patch class: " + patch.id);
   if (patch.romStart !== null && !(patch.romStart >= 0 && patch.romEnd <= 0x1000000 && patch.romStart < patch.romEnd)) {
@@ -81,5 +106,6 @@ console.log(
   stages.stages.length + " stages / 84 pickups,",
   project.featureBoard.length + " feature cards,",
   project.compatibility.length + " compatibility rows,",
+  inlineScripts.length + " inline script(s) parsed,",
   "source " + memory.sourceCommit.slice(0, 12)
 );
